@@ -1,3 +1,3 @@
-public class topscore {
+public class Topscore {
     
 }
