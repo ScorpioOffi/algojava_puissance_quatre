@@ -1,9 +1,8 @@
+import model.Menu;
+
 public class Jeu {
-    public static void main(String[] args){
-        String[][] tab = new String[6][7];
-        
 
-    }
+    public static void main(String[] args) throws Exception {
+        Menu.afficher_menus();
+    }   
 }
-
-
