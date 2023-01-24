@@ -54,7 +54,7 @@ public class Joueur {// on commence par créer une classe joueur
            //VINCENT 
            
 
-    public static void customisationJoueur() {// on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
+   /*  public static void customisationJoueur() {// on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
 
         Scanner scann = new Scanner(System.in);// on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
         
@@ -67,7 +67,7 @@ public class Joueur {// on commence par créer une classe joueur
         System.out.println(" coloré ou pas??");// on demande à l'utilisateur de rentrer sa couleur
         String couleur = scann.nextLine();// on récupère la couleur entrée par l'utilisateur
 
-        Joueur joueur = new Joueur(nom, symbols, couleur);// on crée un joueur avec les données entrées par l'utilisateur
+        Joueur joueur = new Joueur(nom, symbols, couleur);// on crée un joueur avec les données entrées par l'utilisateur 
 
         System.out.println(" ta custo est fini ! tu ressembleras à ca :");// on affiche les caractéristiques du joueur
 
@@ -75,10 +75,10 @@ public class Joueur {// on commence par créer une classe joueur
         System.out.println("Symbole : " + joueur.getSymb());// on affiche le symbole du joueur
         System.out.println("Couleur : " + joueur.getCouleur());// on affiche la couleur du joueur
     }
+*/
 
-
-   
-
+public static void customisationJoueur(
+    
 
 
     
