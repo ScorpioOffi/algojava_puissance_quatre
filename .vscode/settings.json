@@ -1,10 +1,17 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
+<<<<<<< HEAD
     ]
 <<<<<<< HEAD
+=======
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+>>>>>>> 0c339112dc53f5ed49b0333894244d4511e33d7c
 }
 =======
 }
