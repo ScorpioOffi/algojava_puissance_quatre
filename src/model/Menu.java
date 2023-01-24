@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-
+    
+    public static String ANSI_GREEN = "\u001B[32m";
+    public static String ANSI_VIOLET = "\u001B[35m";
+    public static String ANSI_JAUNE = "\u001B[33m";
     private static Scanner _scan = new Scanner(System.in);
 
     public static void afficher_menus() {
@@ -12,10 +15,10 @@ public class Menu {
         while(true) {
             afficher_menu_choice();
             String choix = _scan.nextLine();
+            System.out.println( "TEST?"  + ANSI_GREEN + "VERT " + "\t" + ANSI_JAUNE + "VIOLET"); 
             switch (choix) {
                 case "1":
                     // Choisir 1 contre 1
-                    afficher_menu_secondaire();
                     String choix2= _scan.nextLine();
                     switch(choix2) {
                         case "1":
@@ -38,13 +41,12 @@ public class Menu {
                             break;
                         default:
                             // Si aucune commande n'est reconnue
-                            System.out.println("Entrez une commande valide");
+                            System.out.println("Entrez une commande valide ");
                             break;
                     }
                     break;
                 case "2":
                     // Choisir 1 contre l'IA
-                    afficher_menu_secondaire();
                     String choix3= _scan.nextLine();
                     switch(choix3) {
                         case "1":
@@ -86,19 +88,6 @@ public class Menu {
         menus.add("1- Jouer 1 contre 1");
         menus.add("2- Jouer contre l'IA");
         menus.add("q- Quitter");
-        for (String menu : menus) {
-            System.out.println(menu);
-        }
-    }
-
-    public static void afficher_menu_secondaire() {
-        ArrayList<String> menus = new ArrayList<String>();
-        menus.add("----- PUISSANCE 4 - MENU Secondaire ----");
-        menus.add("1- Choisir le nom");
-        menus.add("2- Sélectionner le symbole");
-        menus.add("3- Sélectionner la couleur");
-        menus.add("4- Lancer la partie");
-        menus.add("m- retour");
         for (String menu : menus) {
             System.out.println(menu);
         }
