@@ -4,4 +4,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 60411e85963811ea986cd1ee920735c6ed418303
