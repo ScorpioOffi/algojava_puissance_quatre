@@ -6,16 +6,7 @@ public class Joueur {// on commence par créer une classe joueur
 
 
 
-    // DEMANDÉ A VINCENT SI FAUT PRIVATE OU PROTECT
-     //VINCENT 
-      //VINCENT 
-       //VINCENT 
-        //VINCENT 
-         //VINCENT 
-          //VINCENT 
-           //VINCENT 
-
-
+    
     private String nom; // une variable nom de type String qui va nous permettre de stocker le nom du joueur
     private String symbols; // le meme principe pour la variable symbols qui va nous permettre de stocker le symbole du joueur
     private String couleur;// et la variable couleur qui va nous permettre de stocker la couleur du joueur
@@ -43,29 +34,47 @@ public class Joueur {// on commence par créer une classe joueur
         this.couleur = couleur;// on initialise la variable couleur
        
     }
-    // QUE METTRE STATIC VOID OU VOID??
-    //VINCENT 
-     //VINCENT 
-      //VINCENT 
-       //VINCENT 
-        //VINCENT 
-         //VINCENT 
-          //VINCENT 
-           //VINCENT 
-           
+    
 
-   /*  public static void customisationJoueur() {// on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
+   public static Joueur creerJoueur() {// on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
 
         Scanner scann = new Scanner(System.in);// on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
         
         System.out.println("Entre un pseudo mais soit original !!");// on demande à l'utilisateur de rentrer son nom
         String nom = scann.nextLine();// on récupère le nom entré par l'utilisateur
 
-        System.out.println("A toi de choisir ton symbols ");// on demande à l'utilisateur de rentrer son symbole
+
+
+
+        // choisir  ton pseudo
+
+
+
+
+
+        System.out.println("A toi de choisir ton symboles ");// on demande à l'utilisateur de rentrer son symbole
         String symbols = scann.nextLine();// on récupère le symbole entré par l'utilisateur
+
+
+
+
+        // choisir  ton sym
+
+
+
+        
 
         System.out.println(" coloré ou pas??");// on demande à l'utilisateur de rentrer sa couleur
         String couleur = scann.nextLine();// on récupère la couleur entrée par l'utilisateur
+
+
+
+       // choisir  ta couleurss
+
+
+
+
+        
 
         Joueur joueur = new Joueur(nom, symbols, couleur);// on crée un joueur avec les données entrées par l'utilisateur 
 
@@ -74,12 +83,7 @@ public class Joueur {// on commence par créer une classe joueur
         System.out.println("Nom : " + joueur.getNom());// on affiche le nom du joueur
         System.out.println("Symbole : " + joueur.getSymb());// on affiche le symbole du joueur
         System.out.println("Couleur : " + joueur.getCouleur());// on affiche la couleur du joueur
+
+        return joueur;
     }
-*/
-
-public static void customisationJoueur(
-    
-
-
-    
 }
