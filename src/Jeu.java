@@ -1,3 +1,4 @@
+import model.Color;
 import java.util.Scanner;
 
 import model.Menu;
@@ -14,63 +15,62 @@ public class Jeu {
         }
 
         if (State_Game.isGameState(State_Game.PLAYING)) {
-            Scanner scanner = new Scanner(System.in);
-            int N = 4;
+            Scanner _scan = new Scanner(System.in);
             int C = 7;
             int L = 6;
-            char[][] plateau = new char[C][L];
+            char[][] grille = new char[C][L];
             for (int x = 0; x < C; x++) {
                 for (int y = 0; y < L; y++) {
-                    plateau[x][y] = '.';
+                    grille[x][y] = '.';
                 }
             }
-            int gagnant = 0;
+            int winner = 0;
             for (int i = 1; i <= C * L; i++) {
 
-                for (int loop = 0; loop < C + 2 + 2 * C; loop++) System.out.print(' ');
+                for (int a = 0; a < C + 2 + 2 * C; a++) System.out.print(' ');
                 System.out.println();
 
                 for (int y = 0; y < L; y++) {
                     System.out.print(' ');
                     for (int x = 0; x < C; x++) {
-                        System.out.print(" " + plateau[x][y] + " ");
+                        System.out.print(" " + grille[x][y] + " ");
                     }
                     System.out.print(' ');
                     System.out.println();
                 }
 
-                for (int loop = 0; loop < C + 2 + 2 * C; loop++) System.out.print(' ');
+                for (int b = 0; b < C + 2 + 2 * C; b++) System.out.print(' ');
                 System.out.println();
 
-                System.out.println(" Au tour du joueur " + (i % 2 == 1 ? 'X' : 'O'));
-                boolean placement = false;
+                System.out.println(Color.CYAN + "Au tour du joueur " + Color.BLEU + (i % 2 == 1 ? 'X' : 'O') + Color.RESET);
+                boolean position = false;
                 int colonne = -1;
-                while (!placement) {
+                while (!position) {
                     colonne = -1;
-                    String ligne = scanner.nextLine();
+                    String ligne = _scan.nextLine();
                     try {
                         colonne = Integer.valueOf(ligne);
 
                         if (colonne >= 1 && colonne <= C) {
-                            if (plateau[colonne - 1][0] != '.') {
-                                System.out.println("Colonne pleine, réitérez");
+                            if (grille[colonne - 1][0] != '.') {
+                                System.out.println(Color.CYAN + "Colonne pleine, réitérez" + Color.RESET);
                             } else {
-                                placement = true;
+                                position = true;
                             }
                         } else {
-                            System.out.println("Nombre incorrect, réitérez");
+                            System.out.println(Color.CYAN + "Nombre incorrect, réitérez" + Color.RESET);
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Nombre incorrect, réitérez");
+                        System.out.println(Color.CYAN + "Nombre incorrect, réitérez" + Color.RESET);
                     }
 
                 }
                 int rang = L - 1;
-                while (plateau[colonne - 1][rang] != '.') {
+                while (grille[colonne - 1][rang] != '.') {
                     rang--;
                 }
-                plateau[colonne - 1][rang] = (i % 2 == 1 ? 'X' : 'O');
+                grille[colonne - 1][rang] = (i % 2 == 1 ? 'X' : 'O');
                 char symbole = (i % 2 == 1 ? 'X' : 'O');
                 int max = 0;
                 int x;
@@ -80,14 +80,14 @@ public class Jeu {
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
-                while (y >= 0 && x >= 0 && plateau[x][y] == symbole) {
+                while (y >= 0 && x >= 0 && grille[x][y] == symbole) {
                     y--;
                     x--;
                     somme++;
                 }
                 x = colonne - 1;
                 y = rang;
-                while (y < L && x < C && plateau[x][y] == symbole) {
+                while (y < L && x < C && grille[x][y] == symbole) {
                     y++;
                     x++;
                     somme++;
@@ -97,14 +97,14 @@ public class Jeu {
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
-                while (y >= 0 && x < C && plateau[x][y] == symbole) {
+                while (y >= 0 && x < C && grille[x][y] == symbole) {
                     y--;
                     x++;
                     somme++;
                 }
                 x = colonne - 1;
                 y = rang;
-                while (y < L && x >= 0 && plateau[x][y] == symbole) {
+                while (y < L && x >= 0 && grille[x][y] == symbole) {
                     y++;
                     x--;
                     somme++;
@@ -114,12 +114,12 @@ public class Jeu {
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
-                while (y >= 0 && plateau[x][y] == symbole) {
+                while (y >= 0 && grille[x][y] == symbole) {
                     y--;
                     somme++;
                 }
                 y = rang;
-                while (y < L && plateau[x][y] == symbole) {
+                while (y < L && grille[x][y] == symbole) {
                     y++;
                     somme++;
                 }
@@ -128,20 +128,20 @@ public class Jeu {
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
-                while (x >= 0 && plateau[x][y] == symbole) {
+                while (x >= 0 && grille[x][y] == symbole) {
                     x--;
                     somme++;
                 }
                 x = colonne - 1;
-                while (x < C && plateau[x][y] == symbole) {
+                while (x < C && grille[x][y] == symbole) {
                     x++;
                     somme++;
                 }
                 if (somme > max) max = somme;
 
 
-                if (max >= N) {
-                    gagnant = (i % 2 == 1 ? 1 : 2);
+                if (max >= 4) {
+                    winner = (i % 2 == 1 ? 1 : 2);
                     i = C * L + 1;
                 }
 
@@ -150,21 +150,24 @@ public class Jeu {
             for (int y = 0; y < L; y++) {
                 System.out.print(' ');
                 for (int x = 0; x < C; x++) {
-                    System.out.print(" " + plateau[x][y] + " ");
+                    System.out.print(" " + grille[x][y] + " ");
                 }
                 System.out.print(' ');
                 System.out.println();
             }
 
-            if (gagnant == 0) {
-                System.out.println("Match Nul");
+            if (winner == 0) {
+                System.out.println(Color.BLACK + "Match Nul" + Color.RESET);
             }
 
 
-            if (gagnant == 1) {
-                System.out.println("Victoire");
+            if (winner == 1) {
+                System.out.println(Color.VERT + "Victoire" + Color.RESET);
             }
 
+            if (winner == 2) {
+                System.out.println(Color.VERT + "Victoire" + Color.RESET);
+            }
         }
     }
 }
