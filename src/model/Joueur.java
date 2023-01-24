@@ -59,6 +59,7 @@ public class Joueur { // on commence par créer une classe joueur
         System.out.println("Symbole : " + joueur.getSymb()); // on affiche le symbole du joueur
         System.out.println("Couleur : " + joueur.getCouleur()); // on affiche la couleur du joueur
 
+        State_Game.setGameState(State_Game.PLAYING);
         return joueur;
     }
 }
