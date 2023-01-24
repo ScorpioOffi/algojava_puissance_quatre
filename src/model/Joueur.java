@@ -33,12 +33,7 @@ public class Joueur { // on commence par créer une classe joueur
     }
     
     public static Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
-      
-        String ANSI_JAUNE= "\u001B[33m";
-        String ANSI_BLEU = "\u001B[34m";
-        String ANSI_VIOLET = "\u001B[35m";
-        String ANSI_ORANGE = "\u001B[39m";
-        String ANSI_RESET = "\u001B[0m";
+ 
         Scanner scann = new Scanner(System.in); // on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
         
         System.out.println("Quel est votre nom ?"); // on demande à l'utilisateur de rentrer son nom
@@ -51,10 +46,10 @@ public class Joueur { // on commence par créer une classe joueur
         // choisir  ton sym
         System.out.println("Quel couleur veux-tu ?"); // on demande à l'utilisateur de rentrer sa couleur
         System.out.println("Voici la liste des couleurs disponibles :"); 
-        System.out.println( ANSI_JAUNE + "\n *----Jaune----* \n"+ ANSI_RESET);
-        System.out.println( ANSI_BLEU + "\n *----Bleu----* \n"+ ANSI_RESET); 
-        System.out.println( ANSI_VIOLET + "\n *----Violet----* \n"+ ANSI_RESET); 
-        System.out.println( ANSI_ORANGE + "\n *----Orange----* \n"+ ANSI_RESET); 
+        System.out.println( Color.ANSI_JAUNE + "\n *----Jaune----* \n"+ Color.ANSI_RESET);
+        System.out.println( Color.ANSI_BLEU + "\n *----Bleu----* \n"+ Color.ANSI_RESET); 
+        System.out.println( Color.ANSI_VIOLET + "\n *----Violet----* \n"+ Color.ANSI_RESET); 
+        System.out.println( Color.ANSI_ORANGE + "\n *----Orange----* \n"+ Color.ANSI_RESET); 
   
         System.out.println(" ");
         System.out.println("Quel couleur souhaitez vous ?"); // on demande à l'utilisateur de rentrer sa couleur
