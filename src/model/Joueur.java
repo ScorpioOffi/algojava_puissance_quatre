@@ -49,7 +49,7 @@ public class Joueur { // on commence par créer une classe joueur
         System.out.println( Color.ANSI_JAUNE + "\n *----Jaune----* \n"+ Color.ANSI_RESET);
         System.out.println( Color.ANSI_BLEU + "\n *----Bleu----* \n"+ Color.ANSI_RESET); 
         System.out.println( Color.ANSI_VIOLET + "\n *----Violet----* \n"+ Color.ANSI_RESET); 
-        System.out.println( Color.ANSI_ORANGE + "\n *----Orange----* \n"+ Color.ANSI_RESET); 
+        System.out.println( Color.ANSI_ROUGE + "\n *----Rouge----* \n"+ Color.ANSI_RESET); 
   
         System.out.println(" ");
         System.out.println("Quel couleur souhaitez vous ?"); // on demande à l'utilisateur de rentrer sa couleur
