@@ -1,5 +1,5 @@
 package model;
 
-public class IA {
+public class Pion {
     
 }
