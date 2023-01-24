@@ -1,9 +1,9 @@
-import java.util.ArrayList;
-
 public class Jeu {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+    public static void main(String[] args){
+        String[][] tab = new String[6][7];
+        
+
     }
-
-
 }
+
+
