@@ -2,12 +2,16 @@ package model;
 
 import java.util.Scanner;
 
+
 public class Joueur { // on commence par créer une classe joueur
+    
     
     //on declare les variables de la classe joueur
     private String nom; // une variable nom de type String qui va nous permettre de stocker le nom du joueur
     private String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker le symbole du joueur
     private String couleur; // et la variable couleur qui va nous permettre de stocker la couleur du joueur
+   
+   
 
     // ON CRÉER LES METHODES DE LA CLASSE JOUEUR
     public String getNom() { // et pour la variable nom
@@ -29,7 +33,12 @@ public class Joueur { // on commence par créer une classe joueur
     }
     
     public static Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
-
+      
+        String ANSI_JAUNE= "\u001B[33m";
+        String ANSI_BLEU = "\u001B[34m";
+        String ANSI_VIOLET = "\u001B[35m";
+        String ANSI_ORANGE = "\u001B[39m";
+        String ANSI_RESET = "\u001B[0m";
         Scanner scann = new Scanner(System.in); // on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
         
         System.out.println("Quel est votre nom ?"); // on demande à l'utilisateur de rentrer son nom
@@ -40,12 +49,13 @@ public class Joueur { // on commence par créer une classe joueur
         String symbols = scann.nextLine(); // on récupère le symbole entré par l'utilisateur
 
         // choisir  ton sym
+        System.out.println("Quel couleur veux-tu ?"); // on demande à l'utilisateur de rentrer sa couleur
         System.out.println("Voici la liste des couleurs disponibles :"); 
-        System.out.println("- Jaune"); 
-        System.out.println("- Rouge"); 
-        System.out.println("- Bleu"); 
-        System.out.println("- Violet"); 
-        System.out.println("- Orange"); 
+        System.out.println( ANSI_JAUNE + "\n *----Jaune----* \n"+ ANSI_RESET);
+        System.out.println( ANSI_BLEU + "\n *----Bleu----* \n"+ ANSI_RESET); 
+        System.out.println( ANSI_VIOLET + "\n *----Violet----* \n"+ ANSI_RESET); 
+        System.out.println( ANSI_ORANGE + "\n *----Orange----* \n"+ ANSI_RESET); 
+  
         System.out.println(" ");
         System.out.println("Quel couleur souhaitez vous ?"); // on demande à l'utilisateur de rentrer sa couleur
         String couleur = scann.nextLine(); // on récupère la couleur entrée par l'utilisateur
