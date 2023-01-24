@@ -19,10 +19,12 @@ public class Joueur { // on commence par créer une classe joueur
     }
 
     public String getSymb() { // on crée une méthode getSymb qui va nous permettre de récupérer la valeur de la variable symbols
+        
         return symbol;
     }
 
     public String getCouleur() { // on fait la même pour la variable couleur
+
         return couleur;
     }
 
@@ -36,26 +38,27 @@ public class Joueur { // on commence par créer une classe joueur
  
         Scanner scann = new Scanner(System.in); // on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
         
+         // choisir  ton pseudo
         System.out.println("Quel est votre nom ?"); // on demande à l'utilisateur de rentrer son nom
         String nom = scann.nextLine(); // on récupère le nom entré par l'utilisateur
 
-        // choisir  ton pseudo
+       
+         // choisir  ta couleur
         System.out.println("Quel symbol souhaitez vous ?"); // on demande à l'utilisateur de rentrer son symbole
         String symbols = scann.nextLine(); // on récupère le symbole entré par l'utilisateur
 
-        // choisir  ton sym
+       
+         // choisir  ta couleur
         System.out.println("Quel couleur veux-tu ?"); // on demande à l'utilisateur de rentrer sa couleur
         System.out.println("Voici la liste des couleurs disponibles :"); 
-        System.out.println( Color.JAUNE + "\n *----Jaune----* \n"+ Color.RESET);
-        System.out.println( Color.BLEU + "\n *----Bleu----* \n"+ Color.RESET); 
-        System.out.println( Color.VIOLET + "\n *----Violet----* \n"+ Color.RESET); 
-        System.out.println( Color.ROUGE + "\n *----Rouge----* \n"+ Color.RESET); 
-        System.out.println( Color.VERT + "\n *----Vert----* \n"+ Color.RESET); 
+       
+        System.out.println( Color.JAUNE + "Jaune "+ Color.BLEU + "    Bleu"+ Color.VIOLET + "    Violet"+ Color.ROUGE + "    Rouge"+ Color.VERT + "    Vert "+ Color.RESET);
+       
         System.out.println(" ");
         System.out.println("Quel couleur souhaitez vous ?"); // on demande à l'utilisateur de rentrer sa couleur
         String couleur = scann.nextLine(); // on récupère la couleur entrée par l'utilisateur
 
-       // choisir  ta couleurss
+      
         Joueur joueur = new Joueur(nom, symbols, couleur);// on crée un joueur avec les données entrées par l'utilisateur 
 
         System.out.println(" ta custo est fini ! tu ressembleras à ca :"); // on affiche les caractéristiques du joueur
