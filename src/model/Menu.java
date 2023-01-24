@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void afficher_menus() {
+    private static Scanner _scan = new Scanner(System.in);
 
-        private static Scanner _scan = new Scanner(System.in);
+    public static void afficher_menus() {
         
         while(true) {
             afficher_menu_choice();
