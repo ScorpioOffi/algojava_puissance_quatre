@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Menu {
 
     private static Scanner _scan = new Scanner(System.in);
@@ -14,31 +15,28 @@ public class Menu {
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
-                    // Création du joueurs (nom, symbol, couleur)
-                    Joueur.creerJoueur();
-                    break;
-                case "2":
-                    // Choisir 1 contre l'IA
-                    select_level_IA();
+                    // Choisir 1 contre 1
+                    afficher_menu_secondaire();
                     String choix2= _scan.nextLine();
                     switch(choix2) {
                         case "1":
                             // Choisir le nom
-                            IA.level_1();
+                            insertion_nom();
                             break;
                         case "2":
                             // Sélection du symbole
-                            IA.level_2();
+                            select_symbol();
                             break;
                         case "3":
                             // Sélection de la couleur
-                            IA.level_3();
+                            select_color();
                             break;
                         case "4":
-                            // choisir la difficulté de l'IA
-                            IA.level_4();
+                            // Lancer la parrtie
+                            start();
                             break;
-                        case "r":
+
+                        case "m":
                             break;
                         default:
                             // Si aucune commande n'est reconnue
@@ -46,7 +44,29 @@ public class Menu {
                             break;
                     }
                     break;
-                case "q":
+                case "2":
+                    // Choisir 1 contre l'IA
+                    afficher_menu_secondaire();
+                    String choix3= _scan.nextLine();
+                    switch(choix3) {
+                        case "1":
+                            // Choisir le nom
+                            creerjo();
+                            break;
+                        case "2":
+                            // Sélection du symbole
+                            select_symbol();
+                            break;
+                        
+                        case "m":
+                            break;
+                        default:
+                            // Si aucune commande n'est reconnue
+                            System.out.println("Entrez une commande valide");
+                            break;
+                    }
+                    break;
+                case "m":
                     return;
                 default:
                     System.out.println("Entrez une commande valide");
@@ -66,16 +86,45 @@ public class Menu {
         }
     }
 
+    public static void afficher_menu_secondaire() {
+        ArrayList<String> menus = new ArrayList<String>();
+        menus.add("----- PUISSANCE 4 - MENU Secondaire ----");
+        menus.add("1- Choisir le nom");
+        menus.add("2- Sélectionner le symbole");
+        menus.add("3- Sélectionner la couleur");
+        menus.add("4- Lancer la partie");
+        menus.add("m- retour");
+        for (String menu : menus) {
+            System.out.println(menu);
+        }
+    }
+
+    public static void insertion_nom() {
+
+    }
+
+    public static void select_symbol() {
+
+    }
+
+    public static void select_color() {
+
+    }
+
     public static void select_level_IA() {
         ArrayList<String> menus = new ArrayList<String>();
         menus.add("----- PUISSANCE 4 - IA Difficulty ----");
         menus.add("1- Niveau 1");
         menus.add("2- Niveau 2");
         menus.add("3- Niveau 3");
-        menus.add("4- Niveau 4");
-        menus.add("r- retour");
+        menus.add("m- retour");
         for (String menu : menus) {
             System.out.println(menu);
         }
+    }
+
+    public static void start() {
+        
+        
     }
 }
