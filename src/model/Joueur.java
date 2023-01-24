@@ -11,9 +11,7 @@ public class Joueur {// on commence par créer une classe joueur
     private String nom; // une variable nom de type String qui va nous permettre de stocker le nom du joueur
     private String symbols; // le meme principe pour la variable symbols qui va nous permettre de stocker le symbole du joueur
     private String couleur;// et la variable couleur qui va nous permettre de stocker la couleur du joueur
-    private int niveau;// et la variable niveau qui va nous permettre de stocker le niveau du joueur
-
-
+   
 
 
     // ON CRÉER LES METHODES DE LA CLASSE JOUEUR
@@ -26,6 +24,8 @@ public class Joueur {// on commence par créer une classe joueur
     }
     public String getCouleur() {// on fait la même pour la variable couleur
         return couleur;
+        
+
     }
     
 

@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Menu {
 
     private static Scanner _scan = new Scanner(System.in);
@@ -34,6 +35,7 @@ public class Menu {
                             // Lancer la parrtie
                             start();
                             break;
+
                         case "m":
                             break;
                         default:
@@ -49,20 +51,13 @@ public class Menu {
                     switch(choix3) {
                         case "1":
                             // Choisir le nom
-                            insertion_nom();
+                            creerjo();
                             break;
                         case "2":
                             // Sélection du symbole
                             select_symbol();
                             break;
-                        case "3":
-                            // Sélection de la couleur
-                            select_color();
-                            break;
-                        case "4":
-                            // choisir la difficulté de l'IA
-                            select_level_IA();
-                            break;
+                        
                         case "m":
                             break;
                         default:
@@ -129,6 +124,7 @@ public class Menu {
     }
 
     public static void start() {
+        
         
     }
 }

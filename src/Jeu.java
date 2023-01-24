@@ -1,5 +1,8 @@
 import model.Menu;
-public class Main {
+
+public class Jeu {
+    
+    
     public static void main(String[] args) throws Exception{
         Menu.afficher_menus();
     }
