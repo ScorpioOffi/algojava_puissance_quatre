@@ -46,11 +46,11 @@ public class Joueur { // on commence par créer une classe joueur
         // choisir  ton sym
         System.out.println("Quel couleur veux-tu ?"); // on demande à l'utilisateur de rentrer sa couleur
         System.out.println("Voici la liste des couleurs disponibles :"); 
-        System.out.println( Color.ANSI_JAUNE + "\n *----Jaune----* \n"+ Color.ANSI_RESET);
-        System.out.println( Color.ANSI_BLEU + "\n *----Bleu----* \n"+ Color.ANSI_RESET); 
-        System.out.println( Color.ANSI_VIOLET + "\n *----Violet----* \n"+ Color.ANSI_RESET); 
-        System.out.println( Color.ANSI_ROUGE + "\n *----Rouge----* \n"+ Color.ANSI_RESET); 
-        System.out.println( Color.ANSI_VERT + "\n *----Rouge----* \n"+ Color.ANSI_RESET); 
+        System.out.println( Color.JAUNE + "\n *----Jaune----* \n"+ Color.RESET);
+        System.out.println( Color.BLEU + "\n *----Bleu----* \n"+ Color.RESET); 
+        System.out.println( Color.VIOLET + "\n *----Violet----* \n"+ Color.RESET); 
+        System.out.println( Color.ROUGE + "\n *----Rouge----* \n"+ Color.RESET); 
+        System.out.println( Color.VERT + "\n *----Vert----* \n"+ Color.RESET); 
         System.out.println(" ");
         System.out.println("Quel couleur souhaitez vous ?"); // on demande à l'utilisateur de rentrer sa couleur
         String couleur = scann.nextLine(); // on récupère la couleur entrée par l'utilisateur
