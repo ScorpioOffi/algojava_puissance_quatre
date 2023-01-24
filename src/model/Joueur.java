@@ -1,3 +1,4 @@
+package model;
 import java.util.Scanner;
 
 public class Joueur {// on commence par créer une classe joueur
@@ -49,9 +50,6 @@ public class Joueur {// on commence par créer une classe joueur
         // choisir  ton pseudo
 
 
-
-
-
         System.out.println("A toi de choisir ton symboles ");// on demande à l'utilisateur de rentrer son symbole
         String symbols = scann.nextLine();// on récupère le symbole entré par l'utilisateur
 
@@ -60,8 +58,6 @@ public class Joueur {// on commence par créer une classe joueur
 
         // choisir  ton sym
 
-
-
         
 
         System.out.println(" coloré ou pas??");// on demande à l'utilisateur de rentrer sa couleur
@@ -69,7 +65,7 @@ public class Joueur {// on commence par créer une classe joueur
 
 
 
-       // choisir  ta couleurss
+       // choisir  ta couleur
 
 
 
