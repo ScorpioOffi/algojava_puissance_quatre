@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.Scanner;
+
 
 public class Joueur {
 
@@ -13,6 +15,7 @@ public class Joueur {
     /*La classe "Joueur" a également trois méthodes "get" qui sont utilisées pour récupérer la valeur
      des variables d'instance respectives.
     */
+
     public String getname() {
         return name;
     }
@@ -36,13 +39,19 @@ public class Joueur {
         this.symbol = symbol;
     }
 
-     public void setcolor(String color){
+    public void setcolor(String color){
         this.color = color;
     }
     
-    private static void addname() throws IOException{
-        Joueur n = new Joueur();
-        System.out.println("veuillez saisirs votre nom ! "); 
+    public static void Joueur( String[] args ) throws IOException{
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("entre ton nom ! ");
+        String name = scanner.nextLine(); 
+        System.out.println(name); 
+
     }
+    
+
 }
 
