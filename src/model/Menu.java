@@ -15,7 +15,8 @@ public class Menu {
             switch (choix) {
                 case "1":
                     // Création du joueurs (nom, symbol, couleur)
-                    Joueur.creerJoueur();
+                    Joueur joueur1 = Joueur.creerJoueur();
+                    Joueur joueur2 = Joueur.creerJoueur();
                     break;
                 case "2":
                     // Choisir 1 contre l'IA

@@ -1,0 +1,61 @@
+
+-------------------Couleur-----------------------
+
+/* public String choixCouleur(int couleur) {
+        if (couleur == 1) {
+            return Color.JAUNE;
+        } else if (couleur == 2) {
+            return Color.ROUGE;
+        } else if (couleur == 3) {
+            return Color.VERT;
+        } else if (couleur == 4) {
+            return Color.BLEU;
+        } else if (couleur == 5) {
+            return Color.VIOLET;
+        
+    }
+        return "Veuillez choisir une couleur";
+    }
+
+
+
+
+--------------------MENU AFFICHAGE-----------------------
+
+
+
+
+/* 
+         // choisir  ton pseudo
+        System.out.println("Quel est votre nom ?"); // on demande à l'utilisateur de rentrer son nom
+        String nom = scann.nextLine(); // on récupère le nom entré par l'utilisateur
+
+       
+         // choisir  ta couleur
+        System.out.println("Quel symbol souhaitez vous ?"); // on demande à l'utilisateur de rentrer son symbole
+        String symbols = scann.nextLine(); // on récupère le symbole entré par l'utilisateur
+
+       
+         // choisir  ta couleur
+       System.out.println("Quel couleur veux-tu ?"); // on demande à l'utilisateur de rentrer sa couleur
+       System.out.println("Voici la liste des couleurs disponibles :"); 
+       
+        System.out.println( Color.JAUNE + "Jaune "+ Color.BLEU + "    Bleu"+ Color.VIOLET + "    Violet"+ Color.ROUGE + "    Rouge"+ Color.VERT + "    Vert "+ Color.RESET);
+       
+        System.out.println(" ");
+        System.out.println("?"); // on demande à l'utilisateur de rentrer sa couleur
+        String couleur = scann.nextLine(); // on récupère la couleur entrée par l'utilisateur
+
+      
+        Joueur joueur = new Joueur(nom, symbols, couleur);// on crée un joueur avec les données entrées par l'utilisateur 
+
+        System.out.println(" ta custo est fini ! tu ressembleras à ca :"); // on affiche les caractéristiques du joueur
+
+        System.out.println("Nom : " + joueur.getNom()); // on affiche le nom du joueur
+        System.out.println("Symbole : " + joueur.getSymb()); // on affiche le symbole du joueur
+        System.out.println("Couleur : " + joueur.getCouleur()); // on affiche la couleur du joueur
+
+        State_Game.setGameState(State_Game.PLAYING);
+        return this;
+ 
+    }*/
