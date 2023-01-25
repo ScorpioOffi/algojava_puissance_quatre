@@ -52,7 +52,7 @@ public class Joueur {// on commence par créer une classe joueur
         // on crée une variable isOk de type boolean qui va nous permettre de savoir si
         // l'utilisateur a bien rentré les données demandées
         while (!joueur.symbcolor) { // tant que la couleur n'est pas isOk
-            Scanner color1 = new Scanner(System.in);
+            Scanner Couleur = new Scanner(System.in);
 
             System.out.println(
                     "\nQuelle couleur souhaitez vous utiliser ?\nVous pouvez choisir parmis les couleurs suivantes : ["
@@ -60,7 +60,7 @@ public class Joueur {// on commence par créer une classe joueur
                             + Color.VIOLET + "Violet" + Color.BLEU + " et " + Color.ROUGE + "Rouge" + Color.RESET
                             + "]");
 
-            String colorJoueur = color1.nextLine();// on récupère la couleur entrée par l'utilisateur
+            String colorJoueur = Couleur.nextLine();// on récupère la couleur entrée par l'utilisateur
 
             // changement de la couleur de l'objet celon la reponse donné
             if (colorJoueur.toLowerCase().equals("bleu")) {
@@ -146,7 +146,7 @@ public class Joueur {// on commence par créer une classe joueur
             }
 
             State_Game.setGameState(State_Game.PLAYING);
-            
+
         }
 
         

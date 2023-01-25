@@ -1,22 +1,20 @@
-package model;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
+import model.Grille;
+import model.IA;
 
+public class Main {
     private static Scanner _scan = new Scanner(System.in);
-
-    public static void afficher_menus() {
-        
+    public static void main(String[] args) throws Exception {
         while(true) {
             afficher_menu_choice();
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
+                    Grille grille = new Grille();
                     // Création du joueurs (nom, symbol, couleur)
-                    Joueur joueur1 = Joueur.creerJoueur();
-                    Joueur joueur2 = Joueur.creerJoueur();
+                    //Joueur.creerJoueur();
                     break;
                 case "2":
                     // Choisir 1 contre l'IA

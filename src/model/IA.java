@@ -3,6 +3,8 @@ package model;
 public class IA {
 
     public static void level_1() {
+
+        
         
     }
 
