@@ -19,6 +19,7 @@ public class Menu {
                     break;
                 case "2":
                     // Choisir 1 contre l'IA
+                    Joueur.creerJoueur();
                     select_level_IA();
                     String choix2= _scan.nextLine();
                     switch(choix2) {

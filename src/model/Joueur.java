@@ -6,22 +6,35 @@ import java.util.Scanner;
 public class Joueur { // on commence par créer une classe joueur
     
     //on declare les variables de la classe joueur
-    private String nom; // une variable nom de type String qui va nous permettre de stocker le nom du joueur
-    private String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker le symbole du joueur
-    private String couleur; // et la variable couleur qui va nous permettre de stocker la couleur du joueur
+    public static String nom; // une variable nom de type String qui va nous permettre de stocker le nom du joueur
+    public static String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker le symbole du joueur
+    public static String couleur; // et la variable couleur qui va nous permettre de stocker la couleur du joueur
    
     // ON CRÉER LES METHODES DE LA CLASSE JOUEUR
     public String getNom() { // et pour la variable nom
         return nom;
     }
 
+    public void setNom(String valeur) {
+        this.nom = valeur;
+    }
+
     public String getSymb() { // on crée une méthode getSymb qui va nous permettre de récupérer la valeur de la variable symbols
         return symbol;
+    }
+
+    public void setSymb(String valeur) {
+        this.symbol = valeur;
     }
 
     public String getCouleur() { // on fait la même pour la variable couleur
         return couleur;
     }
+    public void setCouleur(String valeur) {
+        this.couleur = valeur;
+    }
+
+
 
     public Joueur(String nom, String symbols, String couleur) { // on crée une méthode constructeur qui va nous permettre de créer un joueur
         this.nom = nom; // on initialise la variable nom
@@ -43,10 +56,10 @@ public class Joueur { // on commence par créer une classe joueur
         
         // choisir  ta couleurs
         System.out.println("Voici la liste des couleurs disponibles :");
-        System.out.println(Color.JAUNE + "\n *----Jaune----* \n"+ Color.RESET);
-        System.out.println(Color.ROUGE + "\n *----Rouge----* \n"+ Color.RESET);
-        System.out.println(Color.BLEU + "\n *----Bleu----* \n"+ Color.RESET);
-        System.out.println(Color.VIOLET + "\n *----Violet----* \n"+ Color.RESET);
+        System.out.println(Color.JAUNE + "*---- Jaune ----* "+ Color.RESET);
+        System.out.println(Color.ROUGE + "*---- Rouge ----* "+ Color.RESET);
+        System.out.println(Color.BLEU + "*---- Bleu -----* "+ Color.RESET);
+        System.out.println(Color.VIOLET + "*---- Violet ----* "+ Color.RESET);
         System.out.println(" ");
         System.out.println("Quel couleur souhaitez vous ?"); // on demande à l'utilisateur de rentrer sa couleur
         String couleur = scann.nextLine(); // on récupère la couleur entrée par l'utilisateur
@@ -55,9 +68,9 @@ public class Joueur { // on commence par créer une classe joueur
 
         System.out.println(" ta custo est fini ! tu ressembleras à ca :"); // on affiche les caractéristiques du joueur
 
-        System.out.println("Nom : " + joueur.getNom()); // on affiche le nom du joueur
-        System.out.println("Symbole : " + joueur.getSymb()); // on affiche le symbole du joueur
-        System.out.println("Couleur : " + joueur.getCouleur()); // on affiche la couleur du joueur
+        System.out.println(Color.CYAN + "Nom : " + Color.RESET + joueur.getNom()); // on affiche le nom du joueur
+        System.out.println("Symbole : " + Color.RESET + joueur.getSymb()); // on affiche le symbole du joueur
+        System.out.println("Couleur : " + Color.RESET + joueur.getCouleur()); // on affiche la couleur du joueur
 
         State_Game.setGameState(State_Game.PLAYING);
     }
