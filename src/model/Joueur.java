@@ -16,12 +16,10 @@ public class Joueur { // on commence par créer une classe joueur
     }
 
     public String getSymb() { // on crée une méthode getSymb qui va nous permettre de récupérer la valeur de la variable symbols
-        
         return symbol;
     }
 
     public String getCouleur() { // on fait la même pour la variable couleur
-
         return couleur;
     }
 
@@ -47,7 +45,7 @@ public class Joueur { // on commence par créer une classe joueur
         }
     */ 
     
-    public Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
+    public static Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
         
         boolean isOk = false; // on crée une variable isOk de type boolean qui va nous permettre de savoir si l'utilisateur a bien rentré les données demandées
     
