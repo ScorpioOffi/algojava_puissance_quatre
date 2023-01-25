@@ -13,86 +13,101 @@ public class Topscore {
 
     private static final String SEPARATEUR = " - ";
     
-    // ---------------------------------------------------------------- 1 contre 1
+    // ---------------------------------------------------------------- 1 contre 1 - Création listes et ordre
 
-    public static ArrayList<Joueur> getTop10() throws IOException, ParseException {
+    public static ArrayList<Joueur> creerListe() {
         ArrayList<Joueur> list = new ArrayList<>();
-        try (BufferedReader buf = new BufferedReader(new FileReader("GestionnaireContacts/src/contacts.csv"))) {
-            String ligne = buf.readLine();
-            while (ligne != null) {
-                String[] tab = ligne.split(SEPARATEUR);
-                Joueur j = Joueur.creerJoueur();
-                j.setNom(tab[0]);
-                j.setSymb(ligne);(tab[1]);
-                j.setCouleur(tab[2]);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("algojava_puissance_quatre/src/game.csv"));
+            String line = br.readLine();
+            while (line != null) {
+                String[] data = line.split(";");
+                Joueur j = new Joueur(line, line, line);
+                Joueur joueur = new Joueur(line, null, null);
+                joueur.setNom(data[0]);
+                j.setNom(line);
+                j.setSymb(line);
+                j.setCouleur(line);
+                j.setScore(Integer.valueOf(data[1]));
                 list.add(j);
-                ligne = buf.readLine();
+                line = br.readLine();
             }
+            br.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
         return list;
     }
 
-    public static void add_winner() {
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("algojava_puissance_quatre/src/game.csv", true)));
-        try {
-            pw.println(this.toString());
-        } finally {
-            pw.close();
-        }
+    // ---------------------------------------------------------------- IA - Création listes et ordre
 
-        /*try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("contacts.csv", true)))) {
-            pw.println(this.toString());
-        }*/
-    }
-
-        // ---------------------------------------------------------------- IA
-
-    public static void getTop10_IA() {
-
-    }
-
-    public static ArrayList<Joueur> lister() throws IOException, ParseException {
+    public static ArrayList<Joueur> creerListe_IA() {
         ArrayList<Joueur> list = new ArrayList<>();
-        try (BufferedReader buf = new BufferedReader(new FileReader("GestionnaireContacts/src/contacts.csv"))) {
-            String ligne = buf.readLine();
-            while (ligne != null) {
-                String[] tab = ligne.split(SEPARATEUR);
-                Joueurc c = new Joueur();
-                c.setNom(tab[0]);
-                c.setPrenom(tab[1]);
-                c.setMail(tab[2]);
-                c.setTelephone(tab[3]);
-                c.setDateNaissance(tab[4]);
-                list.add(c);
-                ligne = buf.readLine();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("algojava_puissance_quatre/src/game_ia.csv"));
+            String line = br.readLine();
+            while (line != null) {
+                String[] data = line.split(";");
+                Joueur j = new Joueur(line, line, line);
+                Joueur joueur = new Joueur(line, null, null);
+                joueur.setNom(data[0]);
+                j.setNom(line);
+                j.setSymb(line);
+                j.setCouleur(line);
+                j.setScore(Integer.valueOf(data[1]));
+                list.add(j);
+                line = br.readLine();
             }
+            br.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
         return list;
     }
 
-    public static void add_winner_IA() {
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("algojava_puissance_quatre/src/game_IA.csv", true)));
-        try {
-            pw.println(this.toString());
-        } finally {
-            pw.close();
-        }
+    // ---------------------------------------------------------------- Lister, Affichage et Enregistrement
 
-        /*try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("contacts.csv", true)))) {
-            pw.println(this.toString());
-        }*/
+    public static ArrayList<Joueur> listeOrdre() {
+        ArrayList<Joueur> list = creerListe();
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).getScore() > list.get(j).getScore()) {
+                    Joueur temp = list.get(i);
+                    list.set(i, list.get(j));
+                    list.set(j, temp);
+                }
+            }
+        }
+        System.out.println("\nTop 10 des meilleurs scores :");
+        return list;
     }
 
-    // ---------------------------------------------------------------- Builder
+    public static ArrayList<Joueur> listeOrdre_IA() {
+        ArrayList<Joueur> list = creerListe();
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).getScore() > list.get(j).getScore()) {
+                    Joueur temp = list.get(i);
+                    list.set(i, list.get(j));
+                    list.set(j, temp);
+                }
+            }
+        }
+        System.out.println("\nTop 10 des meilleurs scores :");
+        return list;
+    }
 
-    @Override
-    public String toString() {
-        StringBuilder build = new StringBuilder();
-        build.append(Joueur.nom);
-        build.append(SEPARATEUR);
-        build.append(Joueur.symbol);
-        build.append(SEPARATEUR);
-        build.append(Joueur.couleur);
-        return build.toString();
+    private static void afficherListe() {
+        ArrayList<Joueur> list = listeOrdre();
+        if (list.size() >= 10) {
+            for (int i = 0; i < 10; i++) {
+                System.out.println((i+1) + " - " + list.get(i).getNom() + " : " + list.get(i).getSymb() + " / " + list.get(i).getCouleur());
+            }
+        }
+        else {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println((i+1) + " - " + list.get(i).getNom() + " : " + list.get(i).getSymb() + " / " + list.get(i).getCouleur());
+            }
+        }
     }
 }

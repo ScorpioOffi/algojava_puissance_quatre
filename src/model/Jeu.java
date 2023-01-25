@@ -1,12 +1,9 @@
+package model;
 import java.util.Scanner;
-
-import model.Color;
-import model.Menu;
-import model.State_Game;
 
 public class Jeu {
 
-    public static void main(String[] args) throws Exception {
+    public static void Game() throws Exception {
 
         State_Game.setGameState(State_Game.WAITING);
         
@@ -147,12 +144,12 @@ public class Jeu {
                 egalite();
             }
 
-            if (winner== 1) {
+            if (winner == 1) {
                 afficher_victoire_pion(C, L, tab);
                 victoire();
             }
 
-            if (winner== 2) {
+            if (winner == 2) {
                 afficher_victoire_pion(C, L, tab);
                 victoire();
             }
