@@ -4,7 +4,7 @@ public class IA {
 
     public static void level_1() {
         
-
+    }
 
     public static void level_2() {
         
