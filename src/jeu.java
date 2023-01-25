@@ -1,9 +1,31 @@
 import java.util.Scanner;
 
+import model.Joueur;
 import model.Menu;
 import model.State_Game;
 
 public class Jeu {
+    public static void victoire(){
+        System.out.println("Victoire!");
+    }
+    public static void egalite(){
+        System.out.println("Egalité!");
+    }
+    public static void afficher_victoire_pion(int C, int L, char[][] tab){
+        for (int y = 0; y < L; y++) {
+            System.out.print(' ');
+            for (int x = 0; x < C; x++) {
+                System.out.print(" " + tab[x][y] + " ");
+            }
+            System.out.print(' ');
+            System.out.println();
+        }
+    }
+    public static void compare(int somme, int max){
+        if (somme > max){
+            max = somme;
+        } 
+    }
 
     public static void main(String[] args) throws Exception {
 
@@ -13,6 +35,7 @@ public class Jeu {
             Menu.afficher_menus();
         }
 
+        State_Game.setGameState(State_Game.PLAYING);
         if (State_Game.isGameState(State_Game.PLAYING)) {
             Scanner _scan = new Scanner(System.in);
             int C = 7;
@@ -91,8 +114,7 @@ public class Jeu {
                     x++;
                     somme++;
                 }
-                if (somme > max) max = somme;
-
+                compare(somme, max);
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
@@ -108,8 +130,7 @@ public class Jeu {
                     x--;
                     somme++;
                 }
-                if (somme > max) max = somme;
-
+                compare(somme, max);
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
@@ -122,8 +143,7 @@ public class Jeu {
                     y++;
                     somme++;
                 }
-                if (somme > max) max = somme;
-
+                compare(somme, max);
                 x = colonne - 1;
                 y = rang;
                 somme = -1;
@@ -136,35 +156,23 @@ public class Jeu {
                     x++;
                     somme++;
                 }
-                if (somme > max) max = somme;
-
-
+                compare(somme, max);
                 if (max >= 4) {
                     winner = (i % 2 == 1 ? 1 : 2);
                     i = C * L + 1;
                 }
-
             }
-
-            for (int y = 0; y < L; y++) {
-                System.out.print(' ');
-                for (int x = 0; x < C; x++) {
-                    System.out.print(" " + tab[x][y] + " ");
-                }
-                System.out.print(' ');
-                System.out.println();
-            }
-
             if (winner == 0) {
-                System.out.println("Egalité!");
+                afficher_victoire_pion(C, L, tab);
+                egalite();
             }
-
-
             if (winner== 1) {
-                System.out.println("Victoire!");
+                afficher_victoire_pion(C, L, tab);
+                victoire();
             }
             if (winner== 2) {
-                System.out.println("Victoire!");
+                afficher_victoire_pion(C, L, tab);
+                victoire();
             }
         }
     }
