@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Joueur {
 
+    boolean symbcolor = false;
+
     private String nom;
     private String symbol;
     private String couleur;
@@ -44,55 +46,109 @@ public class Joueur {
         this.couleur = couleur;// on initialise la variable couleur
     }
 
-    public void creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de personnaliser le joueur
-        
-        boolean isOk = false; // on crée une variable isOk de type boolean qui va nous permettre de savoir si l'utilisateur a bien rentré les données demandées
-    
-        //Scanner scann = new Scanner(System.in); // on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
-    
-        //personnalisation des couleurs   
-        
-        isOk = false;
-        while(!isOk){ // si la couleur n'est pas isOk
+    public static Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de
+                                       // personnaliser le joueur
 
-        Scanner scanncolor = new Scanner(System.in);// on crée un scanner qui va nous permettre de récupérer les données entrées par l'utilisateur
+        // boolean isOk = false; // on crée une variable isOk de type boolean qui va
+        // nous permettre de savoir si l'utilisateur a bien rentré les données demandées
+        // Scanner scann = new Scanner(System.in); // on crée un scanner qui va nous
+        // permettre de récupérer les données entrées par l'utilisateur
+        // personnalisation des couleurs
 
-            if(scanncolor.hasNextInt()) { 
-                int choixcouleurjoueur = scanncolor.nextInt();
-                { 
+        // isOk = false;
+        // while(!isOk){
+        Joueur joueur = new Joueur();
 
-                    boolean symbcolor= false;// on crée une variable isOk de type boolean qui va nous permettre de savoir si l'utilisateur a bien rentré les données demandées
-                    while (!symbcolor) { //tant que la couleur n'est pas isOk
-                        Scanner color1 = new Scanner(System.in);
-                        
-                        System.out.println("\nQuelle couleur souhaitez vous utiliser ?\nVous pouvez choisir parmis les couleurs suivantes : [" + Color.BLEU + "Bleu" + Color.RESET + ", " + Color.JAUNE + "Jaune" + Color.RESET + ", " + Color.VIOLET + "Violet" + Color.BLEU + " et " + Color.ROUGE + "Rouge" + Color.RESET + "]");
+        // on crée une variable isOk de type boolean qui va nous permettre de savoir si
+        // l'utilisateur a bien rentré les données demandées
+        while (!joueur.symbcolor) { // tant que la couleur n'est pas isOk
+            Scanner color1 = new Scanner(System.in);
 
-                            String colorJoueur =
-                            color1.nextLine();// on récupère la couleur entrée par l'utilisateur
-                        
+            System.out.println("\nQuelle couleur souhaitez vous utiliser ?\nVous pouvez choisir parmis les couleurs suivantes : [" + Color.BLEU + "Bleu" + Color.RESET + ", " + Color.JAUNE + "Jaune" + Color.RESET + ", " + Color.VIOLET + "Violet" + Color.BLEU + " et " + Color.ROUGE + "Rouge" + Color.RESET + "]");
 
-                        //changement de la couleur de l'objet celon la reponse donné
-                        if (colorJoueur.toLowerCase().equals("bleu")) {
-                            this.couleur = Color.BLEU;
-                        } else if (colorJoueur.toLowerCase().equals("jaune")) {
-                            this.couleur = Color.JAUNE;
-                        } else if (colorJoueur.toLowerCase().equals("violet")) {
-                            this.couleur = Color.VIOLET;
-                        } else if (colorJoueur.toLowerCase().equals("rouge")) {
-                            this.couleur = Color.ROUGE;
-                        }
+            String colorJoueur = color1.nextLine();// on récupère la couleur entrée par l'utilisateur
 
-                        if (!(colorJoueur.toLowerCase().equals("rouge") || colorJoueur.toLowerCase().equals("violet") || colorJoueur.toLowerCase().equals("jaune") || colorJoueur.toLowerCase().equals("bleu"))) {
-                            //si la reponse pour la couleur est differente des choix donné alors renvoie une erreur
-                            System.out.println(Color.ROUGE+"\nCouleur non isOk car non reconnues! Veuillez réessayer !"+Color.RESET);//message d'erreur
-                            
-                        } else {
-                            symbcolor = true;//si la couleur est isOk alors on passe a la variable suivante
-                        }
-                    }
+            // changement de la couleur de l'objet celon la reponse donné
+            if (colorJoueur.toLowerCase().equals("bleu")) {
+                joueur.couleur = Color.BLEU;
+            }
+            if (colorJoueur.toLowerCase().equals("jaune")) {
+                joueur.couleur = Color.JAUNE;
+            }
+            if (colorJoueur.toLowerCase().equals("violet")) {
+                joueur.couleur = Color.VIOLET;
+            }
+            if (colorJoueur.toLowerCase().equals("rouge")) {
+                joueur.couleur = Color.ROUGE;
 
-                }
+            }
+
+            if (!(colorJoueur.toLowerCase().equals("rouge") || colorJoueur.toLowerCase().equals("violet")|| colorJoueur.toLowerCase().equals("jaune") || colorJoueur.toLowerCase().equals("bleu"))) {
+                // si la reponse pour la couleur est differente des choix donné alors renvoie
+                // une erreur
+                System.out.println(Color.ROUGE + "\nCouleur non reconnues! Veuillez réessayer !" + Color.RESET); // message d'erreur
+            } else {
+                joueur.symbcolor = true; // si la couleur est isOk alors on passe a la variable suivante
             }
         }
+
+
+
+        // personnalisation du symbole
+        joueur.symbcolor = false;
+        while (!joueur.symbcolor) { // tant que le symbole n'est pas isOk
+            Scanner symb1 = new Scanner(System.in);
+
+            System.out.println("\nQuel symbole souhaitez vous utiliser ?\nVous pouvez choisir parmis les symboles suivants : [" + Color.BLEU + "X" + Color.RESET + " et " + Color.ROUGE + "O" + Color.RESET + "]");
+
+            String symbJoueur = symb1.nextLine();// on récupère le symbole entré par l'utilisateur
+
+            // changement du symbole de l'objet celon la reponse donné
+            if (symbJoueur.toLowerCase().equals("x")) {
+                joueur.symbol = Color.BLEU + "X" + Color.RESET;
+            }
+            if (symbJoueur.toLowerCase().equals("o")) {
+                joueur.symbol = Color.ROUGE + "O" + Color.RESET;
+            }
+
+            if (!(symbJoueur.toLowerCase().equals("x") || symbJoueur.toLowerCase().equals("o"))) {
+                // si la reponse pour le symbole est differente des choix donné alors renvoie
+                // une erreur
+                System.out.println(
+                        Color.ROUGE + "\nSymbole non reconnues! Veuillez réessayer !" + Color.RESET);// message
+                                                                                                                  // d'erreur
+
+            } else {
+                joueur.symbcolor = true;// si le symbole est isOk alors on passe a la variable suivante
+            }
+        }
+
+        // personnalisation du nom
+        joueur.symbcolor = false;
+        while (!joueur.symbcolor) { // tant que le nom n'est pas isOk
+            Scanner nom1 = new Scanner(System.in);
+
+            System.out.println("\nQuel nom souhaitez vous utiliser ?");
+
+            String nomJoueur = nom1.nextLine();// on récupère le nom entré par l'utilisateur
+
+            // changement du nom de l'objet celon la reponse donné
+            joueur.nom = nomJoueur;
+
+            if (joueur.nom.equals("")) {
+                // si la reponse pour le nom est differente des choix donné alors renvoie une
+                // erreur
+                System.out.println(Color.ROUGE + "\nNom non reconnues! Veuillez réessayer !" + Color.RESET); // message d'erreur
+
+            } else {
+                joueur.symbcolor = true;// si le nom est isOk alors on passe a la variable suivante
+            }
+
+            State_Game.setGameState(State_Game.PLAYING);
+            
+        }
+
+        
+        return joueur;
     }
 }
