@@ -8,5 +8,5 @@ public class Color {
     public static String CYAN = "\u001B[36m";
     public static String BLACK = "\u001B[40m";
     public static String VERT = "\u001B[32m";
-    public static String RESET = "\u001B[0m";    
+    public static String RESET = "\u001B[0m"; 
 }
