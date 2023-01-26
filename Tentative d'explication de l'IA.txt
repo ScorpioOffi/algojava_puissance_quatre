@@ -1,0 +1,31 @@
+Ok alors mon cerveau est en surchauffe mais je dois l'écrire !!!!!
+
+Etape 1 :
+
+	L'Ia choisit une case aléatoire dans l'une des 3 colonnes centrales (C-D-E si je ne dis pas de conneries) durant 
+	les 2 premiers tours
+
+
+
+Etape 2 : (A voir si il n'y a pas mieux)
+
+	Elle donne une valeur aux pions des 2 joueurs qui ne sont pas bloquées :
+		// - Si pion (amie ou ennemie) de part et d'autre du pion sur un axe : 0pt sur l'axe.
+		- 10pts pour chaque case vide autour du pion
+		- 30pts pour chaque case "amie" autour, et ajout pour chaque pion amie dans l'axe
+		- 1000 pts si 3 pions allignées (dans le but de donner la priorité)
+	
+
+Etape 3 :
+
+	Vérifie le meilleur coup du joeur adverse est le bloque si celui-ci lui fait perdre la partie
+
+
+Etape 4 :
+	L'ordinateur vérifie les trois pions les plus stratégiques : (Dans cette ordre de préférences)
+		- la case qui apporte la victoire si elle existe.
+		- La case voisine disponible, si la pièce qu'on y met n'est pas bloquée des deux sens de l'axe ensuite.
+		- La case dont la distance pour arriver dans l'axe est la moins élevée. (Ne pas s'isoler sur un côté mdr)
+
+
+ATTENTION, il faut rajouter le fait de détecter le plafond (mais là j'ai trop la flemme)
