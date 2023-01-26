@@ -14,13 +14,12 @@ public class IA {
     private static int addrang;
 
     public static void level_1() {
-
         Random rand = new Random();
-        int i = rand.nextInt(6 - 0) -0; 
+        int i = rand.nextInt(7 - 0) -0; 
         addrang = i; 
-        int o = rand.nextInt(6 - 0) -0;
+        int o = rand.nextInt(7 - 0) -0;
 
-
+    }
 
        /* int C = 7;
         int L = 6;
@@ -56,14 +55,25 @@ public class IA {
     
             System.out.println(rand);
         }*/
-    }
 
 
 
-    
 
-    public static void level_2() {
+    public static int level_2( int[][] board, int player ) {
         
+                Random rand = new Random();
+                ArrayList<Integer> prisColumns = new ArrayList<Integer>();
+                int blockedCol=-1;
+                // Ajout des colonnes valides dans l'ArrayList
+                for (int i = 0; i < board[0].length; i++) {
+                    if (board[0][i] == 0) {
+                        prisColumns.add(i);
+                    }
+                }
+                // Vérifie s'il y a une possibilité de victoire pour le joueur humain
+                blockedCol = detect_win(board, player);
+                if(blockedCol>-1) return blockedCol; // si oui, bloque
+                
     }
 
     public static void level_3() {
