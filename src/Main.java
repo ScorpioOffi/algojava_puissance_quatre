@@ -3,24 +3,29 @@ import java.util.Scanner;
 
 import model.Grille;
 import model.IA;
+import model.Joueur;
 
 public class Main {
     private static Scanner _scan = new Scanner(System.in);
+
     public static void main(String[] args) throws Exception {
-        while(true) {
+        while (true) {
             afficher_menu_choice();
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
-                    Grille grille = new Grille();
-                    // Création du joueurs (nom, symbol, couleur)
-                    //Joueur.creerJoueur();
+                    Joueur.nom();
+                    Joueur.symbole();
+                    Joueur.couleur();
+                    
+                    Grille grille = new Grille();// Création du joueurs (nom, symbol, couleur)
+
                     break;
                 case "2":
                     // Choisir 1 contre l'IA
                     select_level_IA();
-                    String choix2= _scan.nextLine();
-                    switch(choix2) {
+                    String choix2 = _scan.nextLine();
+                    switch (choix2) {
                         case "1":
                             // Choisir le nom
                             IA.level_1();

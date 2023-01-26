@@ -69,3 +69,124 @@
      * this.couleur = couleur;// on initialise la variable couleur
      * }
      */
+
+
+
+
+
+
+
+
+     --------------------JOUEUR-------------------
+     package model;
+
+import model.Color;
+
+import java.util.Scanner;
+
+public class Joueur {// on commence par créer une classe joueur
+
+    boolean symbcolor = false;
+
+    // on declare les variables de la classe joueur
+    private String nom; // une variable nom de type String qui va nous permettre de stocker le nom d //
+                        // joueur
+    private String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker l
+                           // // symbole du joueur
+    private String couleur; // et la variable couleur qui va nous permettre de stocker la couleur du joueur
+
+    // ON CRÉER LES METHODES DE LA CLASSE JOUEUR
+    public String getNom() { // et pour la variable nom
+
+        return nom;
+    }
+
+    public String getSymb() { // on crée une méthode getSymb qui va nous permettre de récupérer la valeur de
+                              // la variable symbols
+
+        return symbol;
+    }
+
+    public String getCouleur() { // on fait la même pour la variable couleur
+
+        return couleur;
+    }
+
+   
+
+    public static Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de
+                                         // personnaliser le joueur
+
+        // boolean isOk = false; // on crée une variable isOk de type boolean qui va
+        // nous permettre de savoir si l'utilisateur a bien rentré les données demandées
+        // Scanner scann = new Scanner(System.in); // on crée un scanner qui va nous
+        // permettre de récupérer les données entrées par l'utilisateur
+        // personnalisation des couleurs
+
+        // isOk = false;
+        // while(!isOk){
+        //Joueur joueur = new Joueur();
+        do while (true) { //
+            try (Scanner symbol = new Scanner(System.in)) {
+                System.out.println("\nQuel symbole souhaitez vous utiliser ?\n ["
+                        + joueur.symbcolor + "X" + Color.RESET + joueur.symbcolor + "O" + Color.RESET + "]");
+                String symbJoueur = symbol.nextLine();// on récupère la valeur entrée par l'utilisateur
+                if (symbJoueur.equals("X") || symbJoueur.equals("O")) { // si la valeur entrée par l'utilisateur est égale à
+                                                                        // X ou O
+                    joueur.symbol = symbJoueur; // alors on stocke la valeur dans la variable symbol
+                    joueur.symbcolor = true;
+                } else {
+                    System.out.println("Veuillez entrer un symbole valide");
+                }
+            }
+            break;
+        }
+
+        // on crée une variable isOk de type boolean qui va nous permettre de savoir si
+        // l'utilisateur a bien rentré les données demandées
+        while (true) { // tant que la couleur n'est pas isOk
+            Scanner Couleur = new Scanner(System.in);
+                System.out.println(
+                        "\nQuelle couleur souhaitez vous utiliser ?\nVous pouvez choisir parmis les couleurs suivantes : ["
+                                + Color.BLEU + "Bleu" + Color.RESET + ", " + Color.JAUNE + "Jaune" + Color.RESET + ", "
+                                + Color.VIOLET + "Violet" + Color.BLEU + " et " + Color.ROUGE + "Rouge" + Color.RESET
+                                + "]");
+
+
+                // changement de la couleur de l'objet celon la reponse donné
+                if (colorJoueur.toLowerCase().equals("bleu")) {
+                    joueur.couleur = Color.BLEU;
+                }
+                if (colorJoueur.toLowerCase().equals("jaune")) {
+                    joueur.couleur = Color.JAUNE;
+                }
+                if (colorJoueur.toLowerCase().equals("violet")) {
+                    joueur.couleur = Color.VIOLET;
+                }
+                if (colorJoueur.toLowerCase().equals("rouge")) {
+                    joueur.couleur = Color.ROUGE;
+
+                }
+
+                if (!(colorJoueur.toLowerCase().equals("rouge") || colorJoueur.toLowerCase().equals("violet")
+                        || colorJoueur.toLowerCase().equals("jaune") || colorJoueur.toLowerCase().equals("bleu"))) {
+                    // si la reponse pour la couleur est differente des choix donné alors renvoie
+                    // une erreur
+                    System.out.println(
+                            Color.ROUGE + "\nCouleur non reconnues! Veuillez réessayer !" + Color.RESET);// message
+                                                                                                         // d'erreur
+
+                } else {
+                    joueur.symbcolor = true;// si la couleur est isOk alors on passe a la variable suivante
+                }
+            }
+            retour vers le futur
+
+        }
+        do{
+            
+
+        }while(true);
+    }
+
+
