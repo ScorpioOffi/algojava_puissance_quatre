@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Joueur { // on commence par créer une classe joueur
     
-    
+    public static String currentPlayer;
     //on declare les variables de la classe joueur
     private String nom; // une variable nom de type String qui va nous permettre de stocker le nom du joueur
     private String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker le symbole du joueur
@@ -24,6 +24,13 @@ public class Joueur { // on commence par créer une classe joueur
     public String getCouleur() { // on fait la même pour la variable couleur
 
         return couleur;
+    }
+    public Joueur() {
+        currentPlayer = "1";
+    }
+
+    public static String getCurrentPlayer() {
+            return currentPlayer;
     }
 
     

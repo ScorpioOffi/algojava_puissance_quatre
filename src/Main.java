@@ -1,19 +1,20 @@
-package model;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
+import model.Grille;
+import model.IA;
+import model.Pion;
 
+public class Main {
     private static Scanner _scan = new Scanner(System.in);
-
-    public static void afficher_menus() {
-        
+    public static void main(String[] args) throws Exception {
         while(true) {
             afficher_menu_choice();
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
+                    Grille grille = new Grille();
+                    Pion pion = new Pion();
                     // Création du joueurs (nom, symbol, couleur)
                     //Joueur.creerJoueur();
                     break;

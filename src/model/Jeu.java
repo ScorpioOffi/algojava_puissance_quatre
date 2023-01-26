@@ -1,17 +1,16 @@
+package model;
 import java.util.Scanner;
 
-import model.Joueur;
-import model.Menu;
-import model.State_Game;
-
 public class Jeu {
-    public static void victoire(){
-        System.out.println("Victoire!");
+    public static void victoire() {
+        System.out.println(Color.VERT + "Victoire!" + Color.RESET);
     }
-    public static void egalite(){
-        System.out.println("Egalité!");
+
+    public static void egalite() {
+        System.out.println(Color.BLACK + "Egalité!" + Color.RESET);
     }
-    public static void afficher_victoire_pion(int C, int L, char[][] tab){
+
+    public static void afficher_victoire_pion(int C, int L, char[][] tab) {
         for (int y = 0; y < L; y++) {
             System.out.print(' ');
             for (int x = 0; x < C; x++) {
@@ -21,18 +20,19 @@ public class Jeu {
             System.out.println();
         }
     }
-    public static void compare(int somme, int max){
+
+    public static void compare(int somme, int max) {
         if (somme > max){
             max = somme;
         } 
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void Game() throws Exception {
 
         State_Game.setGameState(State_Game.WAITING);
         
         if (State_Game.isGameState(State_Game.WAITING)) {
-            Menu.afficher_menus();
+            //Menu.afficher_menus();
         }
 
         State_Game.setGameState(State_Game.PLAYING);
@@ -64,7 +64,7 @@ public class Jeu {
                 for (int b = 0; b < C + 2 + 2 * C; b++) System.out.print(' ');
                 System.out.println();
 
-                System.out.println(" Au tour du joueur " + (i % 2 == 1 ? 'X' : 'O'));
+                System.out.println(Color.CYAN + "Au tour du joueur " + Color.BLEU + (i % 2 == 1 ? 'X' : 'O') + Color.RESET);
                 boolean placement = false;
                 int colonne = -1;
                 while (!placement) {
@@ -75,16 +75,16 @@ public class Jeu {
 
                         if (colonne >= 1 && colonne <= C) {
                             if (tab[colonne - 1][0] != '.') {
-                                System.out.println("Colonne pleine, réessayez");
+                                System.out.println(Color.CYAN + "Colonne pleine, réessayez" + Color.RESET);
                             } else {
                                 placement = true;
                             }
                         } else {
-                            System.out.println("Nombre incorrect, réessayez");
+                            System.out.println(Color.CYAN + "Nombre incorrect, réessayez" + Color.RESET);
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Nombre incorrect, réessayez");
+                        System.out.println(Color.CYAN + "Nombre incorrect, réessayez" + Color.RESET);
                     }
 
                 }
@@ -162,18 +162,23 @@ public class Jeu {
                     i = C * L + 1;
                 }
             }
+
             if (winner == 0) {
                 afficher_victoire_pion(C, L, tab);
                 egalite();
             }
-            if (winner== 1) {
+
+            if (winner == 1) {
                 afficher_victoire_pion(C, L, tab);
                 victoire();
             }
-            if (winner== 2) {
+
+            if (winner == 2) {
                 afficher_victoire_pion(C, L, tab);
                 victoire();
             }
         }
     }
+
+    
 }
