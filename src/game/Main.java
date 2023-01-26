@@ -52,10 +52,10 @@ public class Main {
     public static void choixMode() throws FileNotFoundException, IOException, ParseException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n");
-        System.out.println("---------- MODE DE JEU -----------");
-        System.out.println("| 1- Jouer à deux                |");
-        System.out.println("| 2- Jouer face à l'ordi         |");
-        System.out.println("----------------------------------");
+        System.out.println("----- PUISSANCE 4 - MENU PRINCIPAL ----");
+        System.out.println("1- Jouer 1 contre 1");
+        System.out.println("2- Jouer contre l'IA");
+        System.out.println("q- Quitter");
         int choix;
         do {
             if(scanner.hasNextInt()){
@@ -113,16 +113,16 @@ public class Main {
         String lePlateau = "    A   B   C   D   E   F   G\n"; // A renommer
         //String colonne = "";
         for (int lgn = 6; lgn >= 1; lgn--){
-            String ligne = String.valueOf(lgn) + " |";
+            String ligne = String.valueOf(lgn) + " ";
             for (int colonne = 0; colonne <=6; colonne++){
                 Case laCase = plateau[colonne][lgn-1];
                 String affiche;
                 if(laCase.getPion() == null){
-                    affiche = " ";
+                    affiche = ".";
                 }else{
                     affiche = laCase.getPion().getCouleur() + laCase.getPion().getSymbole() + "\u001B[0m";
                 } 
-                ligne += " " + affiche + " |";
+                ligne += " " + affiche + " ";
             }
             lePlateau += ligne + "\n";
         }
