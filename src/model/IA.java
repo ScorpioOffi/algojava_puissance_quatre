@@ -1,9 +1,13 @@
 package model;
 
+<<<<<<< HEAD
 import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.List;
 //import java.util.logging.Logger;
+=======
+import java.util.ArrayList;
+>>>>>>> 185d84d08ae0eee70d5b053a019554709954ebcc
 import java.util.Random;
 
 //import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
@@ -18,6 +22,7 @@ public class IA {
         int i = rand.nextInt(7 - 0) -0; 
         addrang = i; 
         int o = rand.nextInt(7 - 0) -0;
+<<<<<<< HEAD
 
     }
 
@@ -43,9 +48,12 @@ public class IA {
     
             System.out.println(rand);
         }
+=======
+>>>>>>> 185d84d08ae0eee70d5b053a019554709954ebcc
     }
 
         
+<<<<<<< HEAD
         if(dejaPris == rand ){
             System.out.println(true)
         }
@@ -74,6 +82,9 @@ public class IA {
                 blockedCol = detect_win(board, player);
                 if(blockedCol>-1) return blockedCol; // si oui, bloque
                 
+=======
+        
+>>>>>>> 185d84d08ae0eee70d5b053a019554709954ebcc
     }
 
     public static void level_3() {

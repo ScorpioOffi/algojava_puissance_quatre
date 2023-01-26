@@ -80,6 +80,20 @@ public class Score {
         return list;
     }
 
+    private static void afficherListe() {
+        ArrayList<Score> list = Score.listeOrdre();
+        if (list.size() >= 10) {
+            for (int i = 0; i < 10; i++) {
+                System.out.println((i+1) + " - " + list.get(i).getJoueur().getNom() + " : " + list.get(i).getScore());
+            }
+        }
+        else {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println((i+1) + " - " + list.get(i).getJoueur().getNom() + " : " + list.get(i).getScore());
+            }
+        }
+    }
+
     // ------------------------------------------------ 1 contre IA
 
     public int getScore_IA() {
@@ -146,6 +160,20 @@ public class Score {
             }
         }
         return list;
+    }
+
+    private static void afficherListe_IA() {
+        ArrayList<Score> list = Score.listeOrdre();
+        if (list.size() >= 10) {
+            for (int i = 0; i < 10; i++) {
+                System.out.println((i+1) + " - " + list.get(i).getJoueur().getNom() + " : " + list.get(i).getScore());
+            }
+        }
+        else {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println((i+1) + " - " + list.get(i).getJoueur().getNom() + " : " + list.get(i).getScore());
+            }
+        }
     }
  
     // -------------------------------------------------------------

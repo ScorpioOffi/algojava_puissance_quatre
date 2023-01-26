@@ -4,6 +4,7 @@ import model.IA;
 import model.Jeu;
 import model.Joueur;
 import model.Menus;
+import model.Plateau;
 import model.State_Game;
 
 public class Main {
@@ -12,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         State_Game.setGameState(State_Game.WAITING);
+        
         Jeu.Game();
 
         while(true) {
@@ -19,8 +21,9 @@ public class Main {
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
+                    Plateau plateau = new Plateau();
                     // Création du joueurs (nom, symbol, couleur)
-                    Joueur.creerJoueur();
+                    //Joueur.creerJoueur();
                     break;
                 case "2":
                     // Choisir 1 contre l'IA

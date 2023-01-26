@@ -3,8 +3,8 @@ package model;
 import java.util.ArrayList;
 
 public class Menus {
+
     public static void afficher_menu_choice() {
-        
         ArrayList<String> menus = new ArrayList<String>();
         menus.add("----- PUISSANCE 4 - MENU PRINCIPAL ----");
         menus.add("[1] Jouer 1 contre 1");
