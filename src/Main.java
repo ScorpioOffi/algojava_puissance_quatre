@@ -13,24 +13,24 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         State_Game.setGameState(State_Game.WAITING);
-        
+
         Jeu.Game();
 
-        while(true) {
+        while (true) {
             Menus.afficher_menu_choice();
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
                     Plateau plateau = new Plateau();
                     // Création du joueurs (nom, symbol, couleur)
-                    //Joueur.creerJoueur();
+                    // Joueur.creerJoueur();
                     break;
                 case "2":
                     // Choisir 1 contre l'IA
                     Joueur.creerJoueur();
                     Menus.select_level_IA();
-                    String choix2= _scan.nextLine();
-                    switch(choix2) {
+                    String choix2 = _scan.nextLine();
+                    switch (choix2) {
                         case "1":
                             // Choisir le nom
                             IA.level_1();
