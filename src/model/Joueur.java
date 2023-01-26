@@ -1,4 +1,4 @@
-package game.classes;
+package model;
 
 import java.util.*;
 import java.io.BufferedReader;
@@ -64,7 +64,7 @@ public class Joueur {
      */
     public boolean placePion(char nColonne){
 
-        Case caseDispo = jeu.caseDispo(nColonne);
+        Case caseDispo = jeu.case_vide(nColonne);
         if(caseDispo != null){
             caseDispo.setPion(pions[21-coups]);
             histoCoups.add(caseDispo);
@@ -114,7 +114,7 @@ public class Joueur {
     }
 
     public void enregistrer() throws IOException {
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("joueurs.csv", true)));
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("game.csv", true)));
         try {
             pw.println(this.toString());
         } finally {
@@ -124,7 +124,7 @@ public class Joueur {
 
     public static ArrayList<Joueur> lister() throws FileNotFoundException, IOException, ParseException {
         ArrayList<Joueur> list = new ArrayList<>();
-        try (BufferedReader buf = new BufferedReader(new FileReader("joueurs.csv"))) {
+        try (BufferedReader buf = new BufferedReader(new FileReader("game.csv"))) {
             String ligne = buf.readLine();
             while (ligne != null) {
                 String[] tab = ligne.split(SEPARATEUR);

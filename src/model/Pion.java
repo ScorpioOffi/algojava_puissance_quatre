@@ -1,19 +1,19 @@
-package game.classes;
+package model;
 
 public class Pion {
 
     protected Joueur joueur;
     protected String symbole;
     protected String couleur;
-    protected Case laCase;
+    protected Case Case;
 
 
-    public Case getLaCase(){
-        return laCase;
+    public Case getCase(){
+        return Case;
     }
 
-    public void setLaCase(Case laCase) {
-        this.laCase = laCase;
+    public void setCase(Case Case) {
+        this.Case = Case;
     }
 
 

@@ -1,4 +1,4 @@
-package game.classes;
+package model;
 
 public class Direction {
 

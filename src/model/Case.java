@@ -1,4 +1,4 @@
-package game.classes;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Case {
      */
     public void setPion(Pion pion) {
         this.pion = pion;
-        pion.setLaCase(this);
+        pion.setCase(this);
     }
 
     /**
