@@ -12,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         State_Game.setGameState(State_Game.WAITING);
+        
         Jeu.Game();
 
         while(true) {

@@ -57,6 +57,7 @@ public class Joueur {
 
         // isOk = false;
         // while(!isOk){
+
         Joueur joueur = new Joueur();
 
         // on crée une variable isOk de type boolean qui va nous permettre de savoir si

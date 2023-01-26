@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class IA {
@@ -8,12 +9,13 @@ public class IA {
 
     public static void level_1() {
         Random rand = new Random();
-        int i = rand.nextInt(6 - 0) -0; 
+        int i = rand.nextInt(7 - 0) -0; 
         addrang = i; 
-        int o = rand.nextInt(6 - 0) -0;
+        int o = rand.nextInt(7 - 0) -0;
     }
 
     public static void level_2() {
+        
         
     }
 
