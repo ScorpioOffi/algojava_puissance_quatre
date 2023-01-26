@@ -6,10 +6,8 @@ public class Joueur {// on commence par créer une classe joueur
     boolean symbcolor = false;
 
     // on declare les variables de la classe joueur
-    private String nom; // une variable nom de type String qui va nous permettre de stocker le nom du
-                        // joueur
-    private String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker le
-                           // symbole du joueur
+    private String nom; // une variable nom de type String qui va nous permettre de stocker le nom d               
+    private String symbol; // le meme principe pour la variable symbols qui va nous permettre de stocker l                    
     private String couleur; // et la variable couleur qui va nous permettre de stocker la couleur du joueur
 
     // ON CRÉER LES METHODES DE LA CLASSE JOUEUR
@@ -17,24 +15,30 @@ public class Joueur {// on commence par créer une classe joueur
         return nom;
     }
 
-    public String getSymb() { // on crée une méthode getSymb qui va nous permettre de récupérer la valeur de
+    public String getSymb() { 
+        
+        Joueur SymbJoueur = new Joueur();
+
+        Scanner symbol = new Scanner(System.in);
+        System.out.println("\nQuel symbole souhaitez vous utiliser ?\n ["
+                + symbcolor + "X" + Color.RESET +  symbcolor + "O" + Color.RESET + "]");
+        String symbJoueur = symbol.nextLine();// on récupère la valeur entrée par l'utilisateur
+        if (symbJoueur.equals("X") || symbJoueur.equals("O")) { // si la valeur entrée par l'utilisateur est égale à X ou O
+            symbol = 
+           symbcolor = true;
+        } else {
+            System.out.println("Veuillez entrer un symbole valide");
+        }// on crée une méthode getSymb qui va nous permettre de récupérer la valeur de
                               // la variable symbols
 
-        return symbol;
+        return Symbjoueur;
     }
 
     public String getCouleur() { // on fait la même pour la variable couleur
 
         return couleur;
     }
-    /*
-     * public Joueur(String nom, String symbols, String couleur) { // on crée une
-     * méthode constructeur qui va nous permettre de créer un joueur
-     * this.nom = nom; // on initialise la variable nom
-     * this.symbol = symbols; // on initialise la variable symbols
-     * this.couleur = couleur;// on initialise la variable couleur
-     * }
-     */
+   
 
     public static Joueur creerJoueur() { // on crée une méthode customisationJoueur qui va nous permettre de
                                        // personnaliser le joueur
@@ -48,6 +52,9 @@ public class Joueur {// on commence par créer une classe joueur
         // isOk = false;
         // while(!isOk){
         Joueur joueur = new Joueur();
+
+        
+        
 
         // on crée une variable isOk de type boolean qui va nous permettre de savoir si
         // l'utilisateur a bien rentré les données demandées
@@ -92,62 +99,10 @@ public class Joueur {// on commence par créer une classe joueur
 
 
 
-        // personnalisation du symbole
-        joueur.symbcolor = false;
-        while (!joueur.symbcolor) { // tant que le symbole n'est pas isOk
-            Scanner symb1 = new Scanner(System.in);
+       
+         
 
-            System.out.println("\nQuel symbole souhaitez vous utiliser ?\nVous pouvez choisir parmis les symboles suivants : ["
-                    + Color.BLEU + "X" + Color.RESET + " et " + Color.ROUGE + "O" + Color.RESET + "]");
-
-            String symbJoueur = symb1.nextLine();// on récupère le symbole entré par l'utilisateur
-
-            // changement du symbole de l'objet celon la reponse donné
-            if (symbJoueur.toLowerCase().equals("x")) {
-                joueur.symbol = Color.BLEU + "X" + Color.RESET;
-            }
-            if (symbJoueur.toLowerCase().equals("o")) {
-                joueur.symbol = Color.ROUGE + "O" + Color.RESET;
-            }
-
-            if (!(symbJoueur.toLowerCase().equals("x") || symbJoueur.toLowerCase().equals("o"))) {
-                // si la reponse pour le symbole est differente des choix donné alors renvoie
-                // une erreur
-                System.out.println(
-                        Color.ROUGE + "\nSymbole non reconnues! Veuillez réessayer !" + Color.RESET);// message
-                                                                                                                  // d'erreur
-
-            } else {
-                joueur.symbcolor = true;// si le symbole est isOk alors on passe a la variable suivante
-            }
-        }
-
-        // personnalisation du nom
-        joueur.symbcolor = false;
-        while (!joueur.symbcolor) { // tant que le nom n'est pas isOk
-            Scanner nom1 = new Scanner(System.in);
-
-            System.out.println("\nQuel nom souhaitez vous utiliser ?");
-
-            String nomJoueur = nom1.nextLine();// on récupère le nom entré par l'utilisateur
-
-            // changement du nom de l'objet celon la reponse donné
-            joueur.nom = nomJoueur;
-
-            if (joueur.nom.equals("")) {
-                // si la reponse pour le nom est differente des choix donné alors renvoie une
-                // erreur
-                System.out.println(
-                        Color.ROUGE + "\nNom non reconnues! Veuillez réessayer !" + Color.RESET);// message
-                                                                                                              // d'erreur
-
-            } else {
-                joueur.symbcolor = true;// si le nom est isOk alors on passe a la variable suivante
-            }
-
-            State_Game.setGameState(State_Game.PLAYING);
-
-        }
+        
 
         
         return joueur;

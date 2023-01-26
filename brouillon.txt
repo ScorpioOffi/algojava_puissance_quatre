@@ -59,3 +59,13 @@
         return this;
  
     }*/
+
+
+     /*
+     * public Joueur(String nom, String symbols, String couleur) { // on crée une
+     * méthode constructeur qui va nous permettre de créer un joueur
+     * this.nom = nom; // on initialise la variable nom
+     * this.symbol = symbols; // on initialise la variable symbols
+     * this.couleur = couleur;// on initialise la variable couleur
+     * }
+     */
