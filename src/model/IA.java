@@ -7,7 +7,7 @@ public class IA {
     
 
     public static void level_1() {
-        Case[][] grille = new Case[6][7];
+        Position[][] grille = new Position[6][7];
         Random rand = new Random();
         
         int i = rand.nextInt(7); 

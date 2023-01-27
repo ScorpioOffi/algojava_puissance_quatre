@@ -20,7 +20,7 @@ public class Joueur {
     protected Jeu jeu;
     protected String nom;
     protected String couleur;
-    protected List<Case> histoCoups;
+    protected List<Position> histoCoups;
 
     public static final String SEPARATEUR = ";";
 
@@ -64,7 +64,7 @@ public class Joueur {
      */
     public boolean placePion(char nColonne){
 
-        Case caseDispo = jeu.case_vide(nColonne);
+        Position caseDispo = jeu.case_vide(nColonne);
         if(caseDispo != null){
             caseDispo.setPion(pions[21-coups]);
             histoCoups.add(caseDispo);
@@ -103,7 +103,7 @@ public class Joueur {
      * Obtient la dernière case jouée.
      * @return Case du dernier coup.
      */
-    public Case lastCoup(){
+    public Position lastCoup(){
         if(histoCoups.size() == 0) return null;
         return histoCoups.get(histoCoups.size()-1);
     }

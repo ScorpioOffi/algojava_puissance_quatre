@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class Case {
+public class Position {
     Jeu jeu;
     /*
     Cases : Identifiées par concaténation colonne+ligne
      */
     private String idCase;
     private Pion pion;
-    private List<Case> voisins;
+    private List<Position> voisins;
 
 
-    public Case(Jeu jeu, String colonne, String ligne){
+    public Position(Jeu jeu, String colonne, String ligne){
         this.jeu = jeu;
         idCase = colonne + ligne;
         pion = null;
@@ -121,9 +121,9 @@ public class Case {
      * @param direction exemples : "HAUT_GAUCHE", "DROITE", "BAS".
      * @return La case voisine.
      */
-    public Case getVoisins(String direction){
+    public Position getVoisins(String direction){
         direction = direction.toUpperCase(Locale.ROOT);
-        Case voisin;
+        Position voisin;
         switch (direction) {
             case "HAUT_GAUCHE" -> voisin = voisins.get(0);
             case "HAUT" -> voisin = voisins.get(1);
@@ -137,14 +137,14 @@ public class Case {
         }
         return voisin;
     }
-    public List<Case> getVoisins(){
+    public List<Position> getVoisins(){
         return voisins;
     }
 
-    public List<Case> verifieVoisins(String symbole){
-        List<Case> voisinsIdentiques = new ArrayList<>();
+    public List<Position> verifieVoisins(String symbole){
+        List<Position> voisinsIdentiques = new ArrayList<>();
 
-        for (Case voisin : voisins) {
+        for (Position voisin : voisins) {
             if(voisin.getPion() != null && voisin.getPion().getSymbole().equals(symbole)){
                 voisinsIdentiques.add(voisin);
             }
@@ -190,8 +190,8 @@ public class Case {
      * @param score Nombre de pièces de même symbole (sans compter la case de ref).
      * @return Nombre de pièces de la même symbole dans la direction.
      */
-    public int verifieUnSens(Case laCase, String direction, int score){
-        Case nextCase = laCase.getVoisins(direction);
+    public int verifieUnSens(Position laCase, String direction, int score){
+        Position nextCase = laCase.getVoisins(direction);
         if(nextCase != null && nextCase.getPion() != null && nextCase.getPion().getSymbole().equals(pion.getSymbole())){
             score++;
             score = verifieUnSens(nextCase, direction, score);

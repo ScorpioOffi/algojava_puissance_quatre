@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class Main {
 
     public static Jeu jeu;
-    public static Joueur joueur1;
-    public static Joueur joueur2;
+    public static Joueur player_1;
+    public static Joueur player_2;
 
     public static void main(String[] args) throws IOException, ParseException{
         choixMode();
-        jeu = new Jeu(joueur1, joueur2);
-        joueur1.setJeu(jeu);
-        joueur2.setJeu(jeu);
+        jeu = new Jeu(player_1, player_2);
+        player_1.setJeu(jeu);
+        player_2.setJeu(jeu);
         boolean victoire;
         affichergrille();
         do {
@@ -24,13 +24,13 @@ public class Main {
             affichergrille();
         }while (!victoire);
 
-        if(joueur2.getCoups() != 21){ 
-            if(joueur1.getCoups() == joueur2.getCoups()){ 
-                Victoire(joueur2);
-                joueur2.enregistrer();
+        if(player_2.getCoups() != 21){ 
+            if(player_1.getCoups() == player_2.getCoups()){ 
+                Victoire(player_2);
+                player_2.enregistrer();
             }else{
-                Victoire(joueur1);
-                joueur1.enregistrer();
+                Victoire(player_1);
+                player_1.enregistrer();
             } 
         }
 
@@ -39,86 +39,85 @@ public class Main {
     public static void choixMode() throws FileNotFoundException, IOException, ParseException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n");
-        System.out.println("----- PUISSANCE 4 - MENU PRINCIPAL ----");
-        System.out.println("1- Jouer 1 contre 1");
-        System.out.println("2- Jouer contre l'IA");
-        System.out.println("4-Lister le top 10");
-        System.out.println("q- Quitter");
-        int choix;
+        System.out.println(Color.BLEU + "----- " + Color.CYAN + "PUISSANCE 4 - MENU PRINCIPAL" + Color.BLEU + " ----" + Color.RESET);
+        System.out.println(Color.CYAN + "1 " + Color.BLEU + "| Jouer 1 contre 1" + Color.RESET);
+        System.out.println(Color.CYAN + "2 " + Color.BLEU + "| Jouer contre l'IA" + Color.RESET);
+        System.out.println(Color.CYAN + "4 " + Color.BLEU + "| Lister le top 10" + Color.RESET);
+        System.out.println(Color.CYAN + "Q " + Color.BLEU + "| Quitter" + Color.RESET);
+        int choice;
         do {
             if(scanner.hasNextInt()){
-                choix = scanner.nextInt();
-                if (choix == 2){
+                choice = scanner.nextInt();
+                if (choice == 2){
                     select_level_IA();
                 }
-                if (choix == 4){
+                if (choice == 4){
                     Joueur.lister();
                     break;
                 }
             }else{
                 scanner.nextLine();
-                choix = 0;
+                choice = 0;
             }
-        }while (choix != 1 && choix != 3 && choix != 4);
+        } while (choice != 1 && choice != 3 && choice != 4);
 
-        joueur1 = creerJoueur(1, "","", choix !=3);
-        joueur2 = creerJoueur(2, "", "", choix == 1);
+        player_1 = creerJoueur(1, "","", choice !=3);
+        player_2 = creerJoueur(2, "", "", choice == 1);
         
     }
 
     public static void Victoire(Joueur gagnant){
-        System.out.println(gagnant.getNom() + " a gagné en " + gagnant.getCoups2() + " coups !");
+        System.out.println(Color.CYAN + gagnant.getNom() + Color.VERT + " a gagné en " + Color.CYAN + gagnant.getCoups2() + Color.VERT + " coups !");
     }
 
 
     public static Joueur creerJoueur(int idJoueur, String symbole, String couleur, boolean humain){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println(String.format("Nom joueur %d :", idJoueur));
+        System.out.println(String.format(Color.BLEU + "Nom joueur " + Color.CYAN +"%d" + Color.BLEU + " :" + Color.RESET, idJoueur));
         String nom = scanner.nextLine();
 
         Scanner scan = new Scanner(System.in);
-        System.out.println(String.format("Symbole joueur %d :", idJoueur));
+        System.out.println(String.format(Color.BLEU + "Symbole joueur " + Color.CYAN + "%d" + Color.BLEU +" :" + Color.RESET, idJoueur));
         symbole = scan.nextLine().substring(0,1);
 
         Scanner scan_ = new Scanner(System.in);
-        System.out.println(String.format("Couleur joueur %d :", idJoueur));
-        System.out.println(String.format("\u001B[31m1- Rouge"));
-        System.out.println(String.format("\u001B[33m2- Jaune"));
-        System.out.println(String.format("\u001B[34m3- Bleu"));
-        System.out.println(String.format("\u001B[35m4- Violet"));
-        System.out.println("\033[37m5- Blanc\033[37m");
+        System.out.println(String.format(Color.BLEU + "Couleur joueur " + Color.CYAN + "%d" + Color.BLEU +  " :" + Color.RESET, idJoueur));
+        System.out.println(String.format(Color.JAUNE + "[ Jaune ]" + Color.RESET));
+        System.out.println(String.format(Color.ROUGE + "[ Rouge ]" + Color.RESET));
+        System.out.println(String.format(Color.BLEU + "[ Bleu ]" + Color.RESET));
+        System.out.println(String.format(Color.VIOLET + "[ Violet ]" + Color.RESET));
+        System.out.println(String.format(Color.RESET + "[ Blanc ]"));
         couleur = scan_.nextLine();
         switch(couleur){
             case "1":
-                 couleur = "\u001B[31m";
-
+                couleur = Color.JAUNE;
             case "2":
-                 couleur = "\u001B[33m";
+                 couleur = Color.ROUGE;
             case "3":
-                 couleur = "\u001B[34m";
+                 couleur = Color.BLEU;
             case "4":
-                 couleur = "\u001B[35m";
+                 couleur = Color.VIOLET;
             case "5":
-                couleur = "\u001B[35m";
+                couleur = Color.RESET;
         }
         return new Joueur(symbole, nom, couleur);
     }
 
-    public static void affichergrille(){
+    public static void affichergrille() {
 
-        Case[][] grille = jeu.getGrille();
+        Position[][] grille = jeu.getGrille();
         String legrille = "                            \n"; // A renommer
         //String colonne = "";
         for (int lgn = 6; lgn >= 1; lgn--){
             String ligne = String.valueOf(" ") + " ";
             for (int colonne = 0; colonne <=6; colonne++){
-                Case laCase = grille[colonne][lgn-1];
+                Position laCase = grille[colonne][lgn-1];
                 String affiche;
                 if(laCase.getPion() == null){
                     affiche = ".";
-                }else{
-                    affiche = laCase.getPion().getCouleur() + laCase.getPion().getSymbole() + "\u001B[0m";
+                } else {
+                    affiche = laCase.getPion().getCouleur() + laCase.getPion().getSymbole() + Color.RESET;
                 } 
                 ligne += " " + affiche + " ";
             }
@@ -132,7 +131,7 @@ public class Main {
         System.out.flush();
     }
 
-    public static boolean tour(){
+    public static boolean tour() {
         Scanner scanner = new Scanner(System.in);
         Joueur joueur = jeu.tourJoueur();
 
@@ -140,27 +139,28 @@ public class Main {
         do {
             char choixColonne;
             do {
-                System.out.println(String.format("Coup n°%d de %s :", joueur.getCoups(), joueur.getNom()));
+                System.out.println(String.format(Color.BLEU + "Coup n°" + Color.CYAN + "%d" + Color.BLEU + " de " + Color.CYAN + "%s" + Color.BLEU + " :", joueur.getCoups(), joueur.getNom()));
                 choixColonne = scanner.next().toUpperCase(Locale.ROOT).charAt(0);
             }while (choixColonne <'A' || choixColonne > 'G');
             valide = joueur.placePion(choixColonne);
-        }while (!valide);
+        } while (!valide);
 
         return jeu.finTour(joueur.lastCoup());
     }
 
     public static void pause(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Tapez 'Entrer' pour le prochain coup");
+        System.out.println(Color.BLEU + "Faites 'Entrer' pour le prochain coup");
         String nom = scanner.nextLine();
     }
+
     public static void select_level_IA() {
         System.out.println("\n");
-        System.out.println("----- PUISSANCE 4 - IA Difficulty ----");
-        System.out.println("1- Niveau 1");
-        System.out.println("2- Niveau 2");
-        System.out.println("3- Niveau 2");
-        System.out.println("4- Niveau 4");
-        System.out.println("r- Retour");
+        System.out.println(Color.BLEU + "----- " + Color.CYAN + " PUISSANCE 4 - IA Difficulty " + Color.BLEU + " ----" + Color.RESET);
+        System.out.println(Color.CYAN + "1 " + Color.BLEU + " | Niveau 1" + Color.RESET);
+        System.out.println(Color.CYAN + "2 " + Color.BLEU + " | Niveau 2" + Color.RESET);
+        System.out.println(Color.CYAN + "3 " + Color.BLEU + " | Niveau 2" + Color.RESET);
+        System.out.println(Color.CYAN + "4 " + Color.BLEU + " | Niveau 4" + Color.RESET);
+        System.out.println(Color.CYAN + "R " + Color.BLEU + "| Retour" + Color.RESET);
     }
 }

@@ -5,14 +5,14 @@ public class Pion {
     protected Joueur joueur;
     protected String symbole;
     protected String couleur;
-    protected Case Case;
+    protected Position Case;
 
 
-    public Case getCase(){
+    public Position getCase(){
         return Case;
     }
 
-    public void setCase(Case Case) {
+    public void setCase(Position Case) {
         this.Case = Case;
     }
 

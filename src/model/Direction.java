@@ -92,7 +92,7 @@ public class Direction {
      * @param caseComparee Case à laquelle comparer
      * @return Direction, null si pas voisin.
      */
-    public static String compareCase(Case caseReference, Case caseComparee){
+    public static String compareCase(Position caseReference, Position caseComparee){
         int diffColonne = caseReference.idColonne()-caseComparee.idColonne();
         int diffLigne = caseReference.idLigne()-caseComparee.idLigne();
         if(diffColonne <= -1){
