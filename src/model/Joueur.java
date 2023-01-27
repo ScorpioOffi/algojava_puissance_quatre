@@ -20,6 +20,9 @@ public class Joueur { // on commence par créer une classe joueur
         
         return symbol;
     }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
     public String getCouleur() { // on fait la même pour la variable couleur
 

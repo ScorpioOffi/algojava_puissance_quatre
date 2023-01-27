@@ -14,7 +14,7 @@ public class Main {
             switch (choix) {
                 case "1":
                     Grille grille = new Grille();
-                    //Pion pion = new Pion();
+                    Pion.ajouterPion("@",2);
                     // Création du joueurs (nom, symbol, couleur)
                     //Joueur.creerJoueur();
                     break;
