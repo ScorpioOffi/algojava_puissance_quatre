@@ -190,3 +190,45 @@ public class Joueur {// on commence par créer une classe joueur
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     public static void couleur() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nQuelle couleur souhaitez vous utiliser ?\n "+Color.JAUNE +"JAUNE" +Color.VIOLET + "VIOLET"  +Color.BLEU+ "BLEU"+ Color.ROUGE+ "ROUGE" + Color.RESET );
+       
+        switch (choix) {
+        case "BLEU":
+            choix = Color.BLEU;
+            break;
+        case "ROUGE":
+            choix = Color.ROUGE;
+            break;
+        case "JAUNE":
+            choix = Color.JAUNE;
+            break;
+        case "VIOLET":
+            choix = Color.VIOLET;
+            break;
+          
+        default:
+            System.out.println("Entrez une couleur valide");
+            break;
+        } String choix = input.nextLine();
+        Joueur.setCouleur(choix);
+
+
+    
+
+

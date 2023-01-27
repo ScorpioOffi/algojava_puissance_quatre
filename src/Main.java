@@ -4,8 +4,10 @@ import java.util.Scanner;
 import model.Grille;
 import model.IA;
 import model.Joueur;
+import model.Pion;
 
 public class Main {
+    
     private static Scanner _scan = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
@@ -14,11 +16,11 @@ public class Main {
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
-                    Joueur.nom();
-                    Joueur.symbole();
-                    Joueur.couleur();
                     
-                    Grille grille = new Grille();// Création du joueurs (nom, symbol, couleur)
+                    Joueur.creerJoueur();
+                    Grille grille = new Grille();
+                   
+                   // Création du joueurs (nom, symbol, couleur)
 
                     break;
                 case "2":
