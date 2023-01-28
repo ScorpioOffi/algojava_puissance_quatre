@@ -1,6 +1,9 @@
 package model;
 
 public class Color {
+    /**
+     * définitions de toutes les couleurs
+     */
     public static String JAUNE= "\u001B[33m";
     public static String ROUGE = "\u001B[31m";
     public static String BLEU = "\u001B[34m";

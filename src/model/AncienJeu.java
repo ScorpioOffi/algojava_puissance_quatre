@@ -2,14 +2,26 @@ package model;
 import java.util.Scanner;
 
 public class AncienJeu {
+    /**
+     * fonction qui affiche la victoire lorsque le joueur gagne
+     */
     public static void victoire() {
         System.out.println(Color.VERT + "Victoire!" + Color.RESET);
     }
 
+    /**
+     * renvoie un message en cas d'égalité
+     */
     public static void egalite() {
         System.out.println(Color.BLACK + "Egalité!" + Color.RESET);
     }
 
+    /**
+     * renvoie la grille avec la totatilé des pions après une victoire
+     * @param C
+     * @param L
+     * @param tab
+     */
     public static void afficher_victoire_pion(int C, int L, char[][] tab) {
         for (int y = 0; y < L; y++) {
             System.out.print(' ');
@@ -21,12 +33,20 @@ public class AncienJeu {
         }
     }
 
+    /**
+     * @param somme
+     * @param max
+     */
     public static void compare(int somme, int max) {
         if (somme > max){
             max = somme;
         } 
     }
 
+    /**
+     * fonction du jeu entier
+     * @throws Exception
+     */
     public static void Game() throws Exception {
 
         State_Game.setGameState(State_Game.WAITING);
