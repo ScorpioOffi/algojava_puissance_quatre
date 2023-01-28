@@ -1,7 +1,7 @@
 package model;
 import java.util.Scanner;
 
-public class Jeu {
+public class AncienJeu {
     public static void victoire() {
         System.out.println(Color.VERT + "Victoire!" + Color.RESET);
     }

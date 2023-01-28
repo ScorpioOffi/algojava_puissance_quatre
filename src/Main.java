@@ -1,8 +1,10 @@
+import java.net.PortUnreachableException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.Grille;
 import model.IA;
+import model.Joueur;
 import model.Pion;
 
 public class Main {
@@ -13,10 +15,12 @@ public class Main {
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
-                    Grille grille = new Grille();
-                    Pion.ajouterPion("@",2);
-                    // Création du joueurs (nom, symbol, couleur)
-                    //Joueur.creerJoueur();
+                Grille grille  = new Grille();
+                Joueur joueur = Joueur.creerJoueur();
+                grille.ajouterPion(joueur.getSymbole(), 0);
+                grille.afficherGrille();
+                
+                    
                     break;
                 case "2":
                     // Choisir 1 contre l'IA
@@ -25,7 +29,7 @@ public class Main {
                     switch(choix2) {
                         case "1":
                             // Choisir le nom
-                            IA.level_1();
+                            //IA.level_1();
                             break;
                         case "2":
                             // Sélection du symbole
@@ -55,6 +59,8 @@ public class Main {
             }
         }
     }
+
+    
 
     public static void afficher_menu_choice() {
         ArrayList<String> menus = new ArrayList<String>();

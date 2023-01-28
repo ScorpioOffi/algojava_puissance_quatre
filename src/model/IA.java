@@ -4,7 +4,7 @@ import java.util.Random;
 import model.Grille;
 public class IA {
 
-    public static void level_1() {
+    /*public static void level_1() {
         Grille grille =  new Grille();
         Random rand = new Random();
         int i = rand.nextInt(7 - 0) -0; 
@@ -19,7 +19,7 @@ public class IA {
         }
         
         i = rand.nextInt(6 - 0) + 0;
-    }
+    }*/
 
   
 

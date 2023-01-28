@@ -39,7 +39,7 @@ public class Score {
                 String[] data = line.split("; ");
                 Score score = new Score();
                 Joueur joueur = new Joueur(line, null, null);
-                joueur.setNom(data[0]);
+                joueur.setNom();
                 score.setJoueur(joueur);
                 score.setScore(Integer.valueOf(data[1]));
                 list.add(score);
@@ -121,7 +121,7 @@ public class Score {
                 String[] data = line.split("; ");
                 Score score = new Score();
                 Joueur joueur = new Joueur(line, null, null);
-                joueur.setNom(data[0]);
+                Joueur.setNom();
                 score.setJoueur(joueur);
                 score.setScore(Integer.valueOf(data[1]));
                 list.add(score);
