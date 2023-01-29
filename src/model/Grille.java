@@ -1,5 +1,6 @@
 package model;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import model.Pion;
@@ -7,8 +8,12 @@ import model.Pion;
 public class Grille {
     private static final int ligne = 6;
     private static final int colonne = 7;
+    private Random rand = new Random();
     private ArrayList<ArrayList<String>> grille;
 
+    /**
+     * permet d'afficher la grille de jeu
+     */
     public void afficherGrille() {
         for (int i = ligne - 1; i >= 0; i--) {
             for (int j = 0; j < colonne; j++) {
@@ -22,57 +27,97 @@ public class Grille {
         System.out.println();
     }
 
+    /**
+     * fonction qui crée une grille
+     */
     public Grille() {
         grille = new ArrayList<ArrayList<String>>();
         for (int i = 0; i < colonne; i++) {
             ArrayList<String> colonne = new ArrayList<String>();
             for (int j = 0; j < ligne; j++) {
-                colonne.add(" ");
+                colonne.add(".");
             }
             grille.add(colonne);
         }
-        afficherGrille();
     }
-    public ArrayList<ArrayList<String>> getGrille() {
-        return grille;
-    }
-
-    public void setGrid(ArrayList<ArrayList<String>> grid) {
-        this.grille = grille;
-    }
-
-
-
-    protected Joueur joueur;
-    protected String symbole;
-    protected String couleur;
     
     private static Scanner _scan = new Scanner(System.in);
-    private static final int ligne = 6;
-    private static final int colonne = 7;
-
+    Pion pion =  new Pion(Joueur.creerJoueur());
     int column = _scan.nextInt();
-    private ArrayList<ArrayList<Pion>> grille;
+    
+    /**
+     * vérifie si la case est vide
+     * @return
+     */
+    public boolean estVide() {
+        return this.pion == null;
+    }
 
-    public void ajouterPion(Pion string, int column) {
-        if (column >= 0 && column <= colonne - 1 && !isColonnePleine(column)) {
+    /*public void ajouterPion(int column) {
+        if (column >= 0 && column < colonne && !isColonnePleine(column)) {
             for (int i = ligne - 1; i >= 0; i--) {
-                if (grille.get(i).get(column).equals(".")) {
-                    grille.get(i).set(column, string);
+                if (grille.get(i).get(column).estVide()) {
+                    grille.get(i).get(column).Pion.setPion(pion);
                     break;
                 }
             }
         } else {
             System.out.println("Mauvaise colonne, réessayez");
         }
+    }*/
+    /**
+     * permet d'ajouter un pion dans la grille
+     * @param symbole
+     * @param column
+     */
+    public void ajouterPion(String symbole, int column) {
+        if (column >= 0 && column <= colonne - 1 && !isColonnePleine(column)) {
+            for (int i = ligne - 1; i >= 0; i--) {
+                if (grille.get(i).get(column).equals(".")) {
+                    grille.get(i).set(column, symbole);
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Vous ne pouvez pas sélectionner cette colonne !");
+        }
     }
     
+    
+    /**
+     * vérifie si une colonne de la grille est pleine 
+     * @param column
+     * @return
+     */
     public boolean isColonnePleine(int column) {
         if (!grille.get(0).get(column).equals(".")) {
             return true;
         }
         return false;
     }
-    
+    /**
+     * vérifie si la grille est pleine
+     * @return
+     */
+    public boolean grillePleine() {
+        for (int i = 0; i < grille.size(); i++) {
+            for (int j = 0; j < grille.get(i).size(); j++) {
+                if (grille.get(i).get(j).equals(".")) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    /**
+     * création de l'IA niveau 1
+     * @return
+     */
+    public int IA_level_1(){
+        int column = rand.nextInt(6 - 0) + 0;
+        while(isColonnePleine(column)){
+            column = rand.nextInt(6 - 0) + 0;
+        }
+        return column;
+    }
 }
-
