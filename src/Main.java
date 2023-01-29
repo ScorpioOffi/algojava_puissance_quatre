@@ -7,6 +7,7 @@ import model.Joueur;
 import model.Pion;
 
 public class Main {
+ 
     
     private static Scanner _scan = new Scanner(System.in);
 
@@ -14,15 +15,20 @@ public class Main {
         while (true) {
             afficher_menu_choice();
             String choix = _scan.nextLine();
+            Grille grille = new Grille();
+            grille.afficherGrille();
             switch (choix) {
                 case "1":
                     
-                    Joueur.creerJoueur();
-                    Grille grille = new Grille();
-                   
-                   // Création du joueurs (nom, symbol, couleur)
-
+                    Joueur.creerJoueur1();
+                    System.out.println("test");
+                    Joueur.creerJoueur2();
+                    grille.afficherGrille();
+                    grille.ajouterPion(Joueur.getLook(), 1);
                     break;
+
+                
+        
                 case "2":
                     // Choisir 1 contre l'IA
                     select_level_IA();
