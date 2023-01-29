@@ -1,4 +1,3 @@
-import java.net.PortUnreachableException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,10 +5,10 @@ import model.Color;
 import model.Grille;
 import model.IA;
 import model.Joueur;
-import model.Pion;
 
 public class Main {
     private static Scanner _scan = new Scanner(System.in);
+    
     /**
      * Étapes du jeu avec les sous menus
      * @param args
@@ -21,10 +20,7 @@ public class Main {
             String choix = _scan.nextLine();
             switch (choix) {
                 case "1":
-                Grille grille  = new Grille();
-                Joueur joueur = Joueur.creerJoueur();
-                grille.ajouterPion(joueur.getSymbole(), 0);
-                grille.afficherGrille();
+                Grille.jeu();
                 
                     
                     break;
@@ -65,7 +61,8 @@ public class Main {
             }
         }
     }
-
+    
+    
     
 
     /**
