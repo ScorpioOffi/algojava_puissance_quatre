@@ -1,12 +1,12 @@
 ## Équipe et Répartition global
 
-VEJUX Léo (Scrum Master) : Grille et Menus
-YANG Léo : Fonctionnalitées de L'IA
-LAMARDELLE Mattéo : Grille
-AOUADI Lina : Fonctionnalitées du Joueur
+- VEJUX Léo (Scrum Master) : Grille et Menus 
+- YANG Léo : Fonctionnalitées de L'IA
+- LAMARDELLE Mattéo : Grille
+- AOUADI Lina : Fonctionnalitées du Joueur
 
-Trello : https://trello.com/invite/b/Di09DydU/ATTIa4f56cbc7bb1e1fc36d6539a03cf3ae5054756DF/algo
-GitHub : https://github.com/ScorpioOffi/algojava_puissance_quatre.git
+[Trello](https://trello.com/invite/b/Di09DydU/ATTIa4f56cbc7bb1e1fc36d6539a03cf3ae5054756DF/algo)
+[GitHub](https://github.com/ScorpioOffi/algojava_puissance_quatre.git)
 
 ================================================================
 
