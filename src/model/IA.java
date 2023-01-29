@@ -1,9 +1,13 @@
 package model;
+
 import java.util.Random;
-
 import model.Grille;
-public class IA {
 
+public class IA {
+    
+    /**
+     * IA niveau 1
+     */
     /*public static void level_1() {
         Grille grille =  new Grille();
         Random rand = new Random();
@@ -23,14 +27,23 @@ public class IA {
 
   
 
+    /**
+     * IA niveau 2
+     */
     public static void level_2() {
         Grille grille  = new Grille();
     }
 
+    /**
+     * IA niveau 3
+     */
     public static void level_3() {
         Grille grille  = new Grille();
     }
 
+    /**
+     * IA niveau 4
+     */
     public static void level_4() {
         Grille grille  = new Grille();
     }

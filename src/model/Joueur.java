@@ -9,7 +9,7 @@ public class Joueur {
     private static String couleur;
 
     /**
-     * prend en paramètres un nom un symbole, et une couleur et permet de créer un joueur
+     * Prend en paramètres un nom un symbole, et une couleur et permet de créer un joueur
      * @param nom
      * @param symbole
      * @param couleur
@@ -22,7 +22,7 @@ public class Joueur {
     }
 
     /**
-     * renvoie le nom du joueur
+     * Renvoie le nom du joueur
      * @return
      */
     public String getNom() {
@@ -30,7 +30,7 @@ public class Joueur {
     }
 
     /**
-     * permet au joueur de rentrer son nom avant de jouer
+     * Permet au joueur de rentrer son nom avant de jouer
      * @return
      */
     public static String setNom() {
@@ -42,7 +42,7 @@ public class Joueur {
     }
 
     /**
-     * renvoie le symbole choisi par le joueur
+     * Renvoie le symbole choisi par le joueur
      * @return
      */
     public static String getSymbole() {
@@ -51,7 +51,7 @@ public class Joueur {
     }
 
     /**
-     * permet au  joueur de rentrer son symbole avant de jouer
+     * Permet au  joueur de rentrer son symbole avant de jouer
      * @param symbole
      * @return
      */
@@ -65,7 +65,7 @@ public class Joueur {
     }
 
     /**
-     * renvoie la couleur du joueur
+     * Renvoie la couleur du joueur
      * @return
      */
     public String getCouleur() {
@@ -74,7 +74,7 @@ public class Joueur {
     
 
     /**
-     * permet au joueur de choisir la couleur de son pion
+     * Permet au joueur de choisir la couleur de son pion
      * @param couleur
      * @return
      */
@@ -86,7 +86,7 @@ public class Joueur {
 
 
     /**
-     * fonction qui crée un joueur
+     * Fonction qui crée un joueur
      * @return
      */
     public static Joueur creerJoueur(){

@@ -9,27 +9,44 @@ public class Score {
     private int score;
     private Joueur joueur;
 
-    public Score() {
-    }
-
     // ------------------------------------------------ 1 contre 1
 
+    /**
+     * Récupérer le score du joueur
+     * @return
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     * Ajouter un score au joueur
+     * @param score
+     */
     public void setScore(int score) {
         this.score = score;
     }
 
+    /**
+     * Récupérer le joueur
+     * @return
+     */
     public Joueur getJoueur() {
         return joueur;
     }
 
+    /**
+     * Désigner le joueur
+     * @param joueur
+     */
     public void setJoueur(Joueur joueur) {
         this.joueur = joueur;
     }
 
+    /**
+     * Création de la liste du classement
+     * @return
+     */
     public static ArrayList<Score> creerListe() {
         ArrayList<Score> list = new ArrayList<>();
         try {
@@ -52,6 +69,10 @@ public class Score {
         return list;
     }
 
+    /**
+     * Classement dans l'ordre des meilleurs scores
+     * @return
+     */
     public static ArrayList<Score> listeOrdre() {
         ArrayList<Score> list = creerListe();
         for (int i = 0; i < list.size(); i++) {
@@ -66,6 +87,10 @@ public class Score {
         return list;
     }
 
+    /**
+     * Supprimer la liste du classement 
+     * @return
+     */
     public static ArrayList<Score> supprListe() {
         ArrayList<Score> list = creerListe();
         for (int i = 0; i < list.size(); i++) {
@@ -80,14 +105,16 @@ public class Score {
         return list;
     }
 
+    /**
+     * Afficher le classement dans l'ordre
+     */
     private static void afficherListe() {
         ArrayList<Score> list = Score.listeOrdre();
         if (list.size() >= 10) {
             for (int i = 0; i < 10; i++) {
                 System.out.println((i+1) + " - " + list.get(i).getJoueur().getNom() + " : " + list.get(i).getScore());
             }
-        }
-        else {
+        } else {
             for (int i = 0; i < list.size(); i++) {
                 System.out.println((i+1) + " - " + list.get(i).getJoueur().getNom() + " : " + list.get(i).getScore());
             }
@@ -96,22 +123,42 @@ public class Score {
 
     // ------------------------------------------------ 1 contre IA
 
+    /**
+     * Récupérer le score du joueur contre l'IA
+     * @return
+     */
     public int getScore_IA() {
         return score;
     }
 
+    /**
+     * Ajouter un score au joueur contre l'IA
+     * @param score
+     */
     public void setScore_IA(int score) {
         this.score = score;
     }
 
+    /**
+     * Récupérer le joueur contre l'IA
+     * @return
+     */
     public Joueur getJoueur_IA() {
         return joueur;
     }
 
+    /**
+     * Désigner le joueur contre l'IA
+     * @param joueur
+     */
     public void setJoueur_IA(Joueur joueur) {
         this.joueur = joueur;
     }
 
+    /**
+     * Création de la liste du classement contre l'IA
+     * @return
+     */
     public static ArrayList<Score> creerListe_IA() {
         ArrayList<Score> list = new ArrayList<>();
         try {
@@ -134,6 +181,10 @@ public class Score {
         return list;
     }
 
+    /**
+     * Classement dans l'ordre des meilleurs scores contre l'IA
+     * @return
+     */
     public static ArrayList<Score> listeOrdre_IA() {
         ArrayList<Score> list = creerListe();
         for (int i = 0; i < list.size(); i++) {
@@ -148,6 +199,10 @@ public class Score {
         return list;
     }
 
+    /**
+     * Supprimer la liste du classement contre l'IA
+     * @return
+     */
     public static ArrayList<Score> supprListe_IA() {
         ArrayList<Score> list = creerListe();
         for (int i = 0; i < list.size(); i++) {
@@ -162,6 +217,9 @@ public class Score {
         return list;
     }
 
+    /**
+     * Afficher le classement contre l'IA dans l'ordre
+     */
     private static void afficherListe_IA() {
         ArrayList<Score> list = Score.listeOrdre();
         if (list.size() >= 10) {

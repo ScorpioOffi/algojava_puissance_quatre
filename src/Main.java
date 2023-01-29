@@ -2,6 +2,7 @@ import java.net.PortUnreachableException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import model.Color;
 import model.Grille;
 import model.IA;
 import model.Joueur;
@@ -9,6 +10,11 @@ import model.Pion;
 
 public class Main {
     private static Scanner _scan = new Scanner(System.in);
+    /**
+     * Étapes du jeu avec les sous menus
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         while(true) {
             afficher_menu_choice();
@@ -62,25 +68,31 @@ public class Main {
 
     
 
+    /**
+     * Affichage du menu principal
+     */
     public static void afficher_menu_choice() {
         ArrayList<String> menus = new ArrayList<String>();
-        menus.add("----- PUISSANCE 4 - MENU PRINCIPAL ----");
-        menus.add("1- Jouer 1 contre 1");
-        menus.add("2- Jouer contre l'IA");
-        menus.add("q- Quitter");
+        menus.add(Color.BLEU + "----- " + Color.CYAN + "PUISSANCE 4 - MENU PRINCIPAL" + Color.BLEU + " ----" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.CYAN + "1" + Color.BLEU + "] Jouer 1 contre 1" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.CYAN + "2" + Color.BLEU + "] Jouer contre l'IA" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.ROUGE + "Q" + Color.BLEU + "] Quitter" + Color.RESET);
         for (String menu : menus) {
             System.out.println(menu);
         }
     }
 
+    /**
+     * Sélection de l'IA
+     */
     public static void select_level_IA() {
         ArrayList<String> menus = new ArrayList<String>();
-        menus.add("----- PUISSANCE 4 - IA Difficulty ----");
-        menus.add("1- Niveau 1");
-        menus.add("2- Niveau 2");
-        menus.add("3- Niveau 3");
-        menus.add("4- Niveau 4");
-        menus.add("r- retour");
+        menus.add(Color.BLEU + "----- " + Color.CYAN + "PUISSANCE 4 - IA Difficulty" + Color.BLEU + " ----" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.CYAN + "1" + Color.BLEU + "] Niveau 1" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.CYAN + "2" + Color.BLEU + "] Niveau 2" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.CYAN + "3" + Color.BLEU + "] Niveau 3" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.CYAN + "4" + Color.BLEU + "] Niveau 4" + Color.RESET);
+        menus.add(Color.BLEU + "[" + Color.ROUGE + "R" + Color.BLEU + "] retour" + Color.RESET);
         for (String menu : menus) {
             System.out.println(menu);
         }

@@ -2,22 +2,23 @@ package model;
 import java.util.Scanner;
 
 public class AncienJeu {
+
     /**
-     * fonction qui affiche la victoire lorsque le joueur gagne
+     * Fonction qui affiche la victoire lorsque le joueur gagne
      */
     public static void victoire() {
         System.out.println(Color.VERT + "Victoire!" + Color.RESET);
     }
 
     /**
-     * renvoie un message en cas d'égalité
+     * Renvoie un message en cas d'égalité
      */
     public static void egalite() {
         System.out.println(Color.BLACK + "Egalité!" + Color.RESET);
     }
 
     /**
-     * renvoie la grille avec la totatilé des pions après une victoire
+     * Renvoie la grille avec la totatilé des pions après une victoire
      * @param C
      * @param L
      * @param tab
@@ -44,7 +45,7 @@ public class AncienJeu {
     }
 
     /**
-     * fonction du jeu entier
+     * Fonction du jeu entier
      * @throws Exception
      */
     public static void Game() throws Exception {

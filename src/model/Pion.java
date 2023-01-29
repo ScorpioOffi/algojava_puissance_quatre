@@ -2,14 +2,12 @@ package model;
 
 public class Pion {
 
-
     protected Joueur joueur;
     protected String symbole;
     protected String couleur;
 
-
     /**
-     * prend en paramètre un joueur et crée un pion
+     * Prend en paramètre un joueur et crée un pion
      * @param joueur
      */
     public Pion(Joueur joueur){
@@ -19,7 +17,7 @@ public class Pion {
     }
 
     /**
-     * renvoie le symbole du joueur
+     * Renvoie le symbole du joueur
      * @return
      */
     public String getSymbole() {
@@ -27,19 +25,20 @@ public class Pion {
     }
 
     /**
-     * renvoie la couleur  du joueur
+     * Renvoie la couleur  du joueur
      * @return
      */
     public String getCouleur() {
         return couleur;
     }
+    
     /**
-     * retourne le joueur
+     * Retourne le joueur
      * @param joueur
      */
     public void setPion(Joueur joueur) {
         this.joueur = joueur;
-        }
+    }
         
     
     

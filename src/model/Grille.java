@@ -12,7 +12,7 @@ public class Grille {
     private ArrayList<ArrayList<String>> grille;
 
     /**
-     * permet d'afficher la grille de jeu
+     * Permet d'afficher la grille de jeu
      */
     public void afficherGrille() {
         for (int i = ligne - 1; i >= 0; i--) {
@@ -28,7 +28,7 @@ public class Grille {
     }
 
     /**
-     * fonction qui crée une grille
+     * Fonction qui crée une grille
      */
     public Grille() {
         grille = new ArrayList<ArrayList<String>>();
@@ -46,7 +46,7 @@ public class Grille {
     int column = _scan.nextInt();
     
     /**
-     * vérifie si la case est vide
+     * Vérifie si la case est vide
      * @return
      */
     public boolean estVide() {
@@ -66,7 +66,7 @@ public class Grille {
         }
     }*/
     /**
-     * permet d'ajouter un pion dans la grille
+     * Permet d'ajouter un pion dans la grille
      * @param symbole
      * @param column
      */
@@ -85,7 +85,7 @@ public class Grille {
     
     
     /**
-     * vérifie si une colonne de la grille est pleine 
+     * Vérifie si une colonne de la grille est pleine 
      * @param column
      * @return
      */
@@ -96,7 +96,7 @@ public class Grille {
         return false;
     }
     /**
-     * vérifie si la grille est pleine
+     * Vérifie si la grille est pleine
      * @return
      */
     public boolean grillePleine() {
@@ -110,7 +110,7 @@ public class Grille {
         return true;
     }
     /**
-     * création de l'IA niveau 1
+     * Création de l'IA niveau 1
      * @return
      */
     public int IA_level_1(){
